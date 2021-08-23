@@ -25,6 +25,11 @@ public class RRankChangeEvent extends REvent {
         this.newRank = newRank;
     }
 
+    /**
+     * Returns the uuid which gains the new rank.
+     * @return the underlying uuid
+     */
+
     public UUID getUuid() {
         return uuid;
     }

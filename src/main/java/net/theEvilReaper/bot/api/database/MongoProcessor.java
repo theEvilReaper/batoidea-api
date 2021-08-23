@@ -1,11 +1,8 @@
 package net.theEvilReaper.bot.api.database;
 
-import com.mongodb.client.MongoCollection;
+import dev.morphia.Datastore;
+import net.theEvilReaper.bot.api.database.model.MongoModel;
 import org.bson.BsonDocument;
-import org.bson.conversions.Bson;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 /**
  * The interface defines some method to interact with an MongoDB server instance.
@@ -14,7 +11,7 @@ import java.util.List;
  * @since 1.0.0
  **/
 
-public interface MongoProcessor<T> {
+public interface MongoProcessor<T extends MongoModel> {
 
     /**
      * Inserts a new object from T into the database.
@@ -25,40 +22,22 @@ public interface MongoProcessor<T> {
 
     /**
      * Deletes a given {@link org.bson.Document} from the database
-     * @param document The {@link BsonDocument} to remove
+     * @param model The {@link BsonDocument} to remove
      */
 
-    void delete(BsonDocument document);
+    void delete(T model);
 
     /**
-     * Updates a given {@link org.bson.Document} in the database.
-     * @param filter A filter which can be applied on the update
-     * @param update The document to update
+     * Updates a given {@link org.bson.conversions.Bson} in the database.
+     * @param model The document to update
      */
 
-    void update(BsonDocument filter, BsonDocument update);
+    void update(T model);
 
     /**
-     * Get an T referenz from the database.
-     * @param filter The filter that can be applied on the query
-     * @return the fetched result. That is an type from T
+     * Returns a {@link Datastore} which allows to create some queries
+     * @return The working {@link Datastore}
      */
 
-    T get(@NotNull Bson filter);
-
-    /**
-     * Gets an collection which includes entries from T
-     * @param name The name from the collection
-     * @return The fetched {@link MongoCollection}
-     */
-
-    MongoCollection<T> getCollection(@NotNull String name);
-
-    /**
-     * Returns a {@link List} which T objects.
-     * @param filter The filter that must be applied.
-     * @return The fetched {@link List}
-     */
-
-    List<T> getList(@NotNull Bson filter);
+    Datastore getDatastore();
 }
