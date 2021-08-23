@@ -1,5 +1,6 @@
 package net.theEvilReaper.bot.api;
 
+import net.theEvilReaper.bot.api.database.IRedisEventManager;
 import net.theEvilReaper.bot.api.interaction.AbstractInteractionFactory;
 import net.theEvilReaper.bot.api.interaction.BotInteraction;
 import net.theEvilReaper.bot.api.observer.PropertyChange;
@@ -91,9 +92,19 @@ public interface IBot extends Connectable, PropertyChange {
 
     BotInteraction getBotInteraction();
 
+    /**
+     * Returns the given implementation of the {@link AbstractInteractionFactory}.
+     * @return the given instance
+     */
 
     AbstractInteractionFactory getInteractionFactory();
 
+    /**
+     * Returns the implementation of the event manager for the redis events.
+     * @return the given instance
+     */
+
+    IRedisEventManager getEventManager();
 
     PropertyChangeSupport getStateChange();
 }
