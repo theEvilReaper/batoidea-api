@@ -1,5 +1,6 @@
 package net.theEvilReaper.bot.api.database;
 
+import net.theEvilReaper.bot.api.database.model.RedisModel;
 import org.redisson.api.RBlockingQueue;
 import org.redisson.api.RBucket;
 import org.redisson.api.RKeys;
@@ -14,7 +15,7 @@ import org.redisson.api.RSet;
  * @since 1.0.0
  **/
 
-public interface RedisProcessor<K, V> {
+public interface RedisProcessor<K, V extends RedisModel> {
 
     /**
      * Get an {@link RMap} from redis.
