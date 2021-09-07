@@ -16,7 +16,7 @@ public abstract class AbstractInteractionFactory {
      * Get a specific implementation of the {@link Interaction} from the factory.
      * @param type The type which implementation should be determine
      * @param clazzType The implementation class from the {@link Interaction}
-     * @param <T> The value must extends from the {@link Interaction}. Other types are not allowed
+     * @param <T> The value must extend from the {@link Interaction}.
      * @return The determined {@link Interaction} implementation.
      */
 
