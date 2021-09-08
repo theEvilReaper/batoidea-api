@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
 
 public abstract class REvent {
 
+    protected static final String EVENT_KEY = "bot";
+
     /**
      * Returns the topic from the {@link REvent}.
      * @return the given topic
