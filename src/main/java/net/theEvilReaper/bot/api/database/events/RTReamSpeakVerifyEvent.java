@@ -25,6 +25,6 @@ public class RTReamSpeakVerifyEvent extends REvent {
 
     @Override
     public @NotNull String getTopic() {
-        return "network:ts:verify";
+        return EVENT_KEY + ":ts:verify";
     }
 }

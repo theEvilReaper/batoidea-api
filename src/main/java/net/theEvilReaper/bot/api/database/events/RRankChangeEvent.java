@@ -45,6 +45,6 @@ public class RRankChangeEvent extends REvent {
     @Override
     @NotNull
     public String getTopic() {
-        return "network:player:rank";
+        return EVENT_KEY + ":player:rank";
     }
 }

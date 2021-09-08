@@ -13,6 +13,6 @@ public class RTeamSpeakSupportEvent extends REvent {
 
     @Override
     public @NotNull String getTopic() {
-        return "network:teamspeak:support";
+        return EVENT_KEY + ":ts:support";
     }
 }
