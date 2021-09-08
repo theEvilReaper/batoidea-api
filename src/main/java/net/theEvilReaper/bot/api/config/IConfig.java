@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 public interface IConfig {
 
     /**
-     * Sets an string into a given file.
+     * Sets a string into a given file.
      * @param key The name of the key
      * @param value The value to set
      */
@@ -28,7 +28,7 @@ public interface IConfig {
     void setInt(@NotNull String key, int value);
 
     /**
-     * Sets an double into a given file.
+     * Sets a double into a given file.
      * @param key The name of the key
      * @param value The value to set
      */
@@ -36,7 +36,7 @@ public interface IConfig {
     void setDouble(@NotNull String key, double value);
 
     /**
-     * Sets an long into a given file.
+     * Sets a long into a given file.
      * @param key The name of the key
      * @param value The value to set
      */
@@ -53,7 +53,7 @@ public interface IConfig {
     String getString(@NotNull String key);
 
     /**
-     * Get a int from a given file.
+     * Get an int from a given file.
      * @param key The key to determine the string.
      * @return the fetched int
      */
