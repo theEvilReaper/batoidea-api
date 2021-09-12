@@ -28,6 +28,13 @@ public interface User {
     void setVerified(boolean verified);
 
     /**
+     * Set's a locale to the user.
+     * @param locale The locale to set
+     */
+
+    void setLocale(Locale locale);
+
+    /**
      * Returns the current channel from the user.
      * @return the current channel as id
      */
