@@ -18,7 +18,7 @@ public interface User {
      * @param groupID The id to set
      */
 
-    void setGroupID(int groupID);
+    void setGroups(int... groupID);
 
     /**
      * Change the verified status. Standard value is false
@@ -39,7 +39,7 @@ public interface User {
      * @return the group id from the user
      */
 
-    int getGroupID();
+    int[] getGroups();
 
     /**
      * Returns if the user is verified.
