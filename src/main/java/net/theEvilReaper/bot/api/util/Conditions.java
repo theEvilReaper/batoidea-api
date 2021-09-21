@@ -33,5 +33,4 @@ public class Conditions {
             throw new IllegalStateException("The properties file is null. Can not set / get values");
         }
     }
-
 }
