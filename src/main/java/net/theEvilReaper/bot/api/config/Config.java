@@ -15,9 +15,6 @@ import java.util.Properties;
 
 public abstract class Config implements IConfig {
 
-    protected static final String FILE_PATH = "data";
-    protected Path path;
-
     protected Properties properties;
 
     /**
