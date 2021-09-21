@@ -1,6 +1,7 @@
 package net.theEvilReaper.bot.api.identity;
 
 import com.github.manevolent.ts3j.identity.LocalIdentity;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @author theEvilReaper
@@ -9,6 +10,19 @@ import com.github.manevolent.ts3j.identity.LocalIdentity;
  **/
 
 public interface Identity {
+
+
+    /**
+     * Sets / overwrites the underlying {@link LocalIdentity}.
+     * @param identity the identity to set
+     */
+
+    void setLocalIdentity(@NotNull LocalIdentity identity);
+
+    /**
+     * Returns the {@link LocalIdentity} of the bot.
+     * @return the created / given {@link LocalIdentity}
+     */
 
     LocalIdentity getIdentity();
 }
