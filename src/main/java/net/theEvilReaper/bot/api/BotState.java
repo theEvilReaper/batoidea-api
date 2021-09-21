@@ -12,5 +12,6 @@ public enum BotState {
     CONNECTING,
     RUNNING,
     STOPPING,
+    SCHEDULED_STOPPING,
     STOPPED
 }
