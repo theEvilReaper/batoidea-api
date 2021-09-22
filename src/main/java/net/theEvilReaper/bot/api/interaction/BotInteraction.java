@@ -32,7 +32,7 @@ public interface BotInteraction extends Interaction {
      * @param targetChannel The channel to join
      */
 
-    default void joinChannel(Channel targetChannel) {
+    default void joinChannel(@NotNull Channel targetChannel) {
         joinChannel(targetChannel.getId());
     }
 
