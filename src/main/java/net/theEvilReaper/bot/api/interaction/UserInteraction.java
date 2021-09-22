@@ -3,7 +3,6 @@ package net.theEvilReaper.bot.api.interaction;
 import com.github.manevolent.ts3j.api.Channel;
 import com.github.manevolent.ts3j.api.Client;
 import com.github.manevolent.ts3j.api.Permission;
-import com.github.manevolent.ts3j.protocol.socket.client.LocalTeamspeakClientSocket;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -14,6 +13,12 @@ import org.jetbrains.annotations.Nullable;
  **/
 
 public interface UserInteraction extends Interaction {
+
+    /**
+     * Sends an message the given {@link Client}.
+     * @param client The client who receives the message
+     * @param message The message to send
+     */
 
     void sendPrivateMessage(@NotNull Client client, @NotNull String message);
 
