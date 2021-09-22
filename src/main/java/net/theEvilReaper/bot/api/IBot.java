@@ -8,6 +8,7 @@ import net.theEvilReaper.bot.api.provider.IChannelProvider;
 import net.theEvilReaper.bot.api.provider.IClientProvider;
 import net.theEvilReaper.bot.api.service.ServiceRegistry;
 import net.theEvilReaper.bot.api.user.IUserService;
+import org.jetbrains.annotations.NotNull;
 
 import java.beans.PropertyChangeSupport;
 import java.util.logging.Logger;
@@ -30,11 +31,18 @@ public interface IBot extends Connectable, PropertyChange {
 
     /**
      * Gets if the bot is stopping.
-     * @return true if the bot is stopping, false otherwise.
+     * @return true if the bot is stopping, false otherwise
      */
     default boolean isStopping() {
         return getState() == BotState.STOPPING;
     }
+
+    /**
+     * Changes the current {@link BotState} to the given state.
+     * @param botState The state to set
+     */
+
+    void setState(@NotNull BotState botState);
 
     /**
      * Returns the logger from the bot.
