@@ -42,6 +42,13 @@ public interface User {
     int getChannelID();
 
     /**
+     * Returns the main teamspeak group of the user.
+     * @return the current main group as id
+     */
+
+    int getMainGroup();
+
+    /**
      * Returns the group id from the user.
      * @return the group id from the user
      */
