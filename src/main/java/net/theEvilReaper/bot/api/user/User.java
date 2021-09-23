@@ -4,6 +4,13 @@ import com.github.manevolent.ts3j.api.Client;
 
 import java.util.Locale;
 
+/**
+ * The {@link User} represents a user on the teamspeak server.
+ * @author theEvilReaper
+ * @since 1.0.0
+ * @version 1.0.0
+ */
+
 public interface User {
 
     /**
