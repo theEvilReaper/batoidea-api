@@ -4,7 +4,6 @@ import net.theEvilReaper.bot.api.util.Conditions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.nio.file.Path;
 import java.util.Properties;
 
 /**
