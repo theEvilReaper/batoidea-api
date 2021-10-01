@@ -3,6 +3,7 @@ package net.theEvilReaper.bot.api.observer;
 import org.jetbrains.annotations.NotNull;
 
 import java.beans.PropertyChangeListener;
+import java.util.List;
 
 /**
  * @author theEvilReaper
@@ -12,7 +13,24 @@ import java.beans.PropertyChangeListener;
 
 public interface PropertyChange {
 
-    void addChangeListener(@NotNull PropertyChangeListener listener);
+    /**
+     * Add a {@link PropertyChangeListener}.
+     * @param listener The listener to add
+     */
 
-    void removeChangeListener(@NotNull PropertyChangeListener listener);
+    void addListener(@NotNull PropertyChangeListener listener);
+
+    /**
+     * Remove a {@link PropertyChangeListener}.
+     * @param listener The listener to remove
+     */
+
+    void removeListener(@NotNull PropertyChangeListener listener);
+
+    /**
+     * Get a list which contains all current active {@link PropertyChangeListener}
+     * @return a list which contains the listener
+     */
+
+    List<PropertyChangeListener> getListeners();
 }
