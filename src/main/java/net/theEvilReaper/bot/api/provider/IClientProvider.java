@@ -11,6 +11,7 @@ import java.util.Map;
  * @since 1.0.0
  **/
 
+//TODO: Rethink...
 public interface IClientProvider {
 
     void add(@NotNull Client client);
@@ -18,7 +19,6 @@ public interface IClientProvider {
     void remove(int clientID);
 
     default void remove(@NotNull Client client) {
-        System.out.println("Removing client");
         this.remove(client.getId());
     }
 
