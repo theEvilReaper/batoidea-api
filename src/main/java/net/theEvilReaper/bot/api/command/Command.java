@@ -6,6 +6,7 @@ import net.theEvilReaper.bot.api.interaction.UserInteraction;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * The class represents the basic structure for the commands
  * @author theEvilReaper
  * @version 1.0.0
  * @since 1.0.0
@@ -15,6 +16,11 @@ public abstract class Command implements CommandExecutor {
 
     protected UserInteraction userInteraction;
     private String usage;
+
+    /**
+     * Creates a new instance from the {@link Command}.
+     * @param factory the {@link AbstractInteractionFactory} to get the {@link UserInteraction}
+     */
 
     public Command(AbstractInteractionFactory factory) {
         this.userInteraction = factory.getInteraction(InteractionType.CLIENT, UserInteraction.class);

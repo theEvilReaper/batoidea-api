@@ -1,5 +1,10 @@
 package net.theEvilReaper.bot.api.service;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,7 +15,10 @@ import java.util.logging.Logger;
  * @since 1.0.0
  **/
 
-public abstract class Service implements Runnable, IService {
+//TODO: Rework
+public abstract class Service implements Runnable, IService, PropertyChangeListener {
+
+    protected final PropertyChangeSupport botStateChange;
 
     private final String name;
     private final long interval;
@@ -23,15 +31,24 @@ public abstract class Service implements Runnable, IService {
     protected boolean running;
     protected boolean stopping;
 
-    public Service(String name, long interval) {
+    public Service(PropertyChangeSupport botStateChange, String name, long interval) {
+        this.botStateChange = botStateChange;
         this.name = name;
         this.interval = interval;
         this.lock = new Object();
     }
 
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        if (!evt.getPropertyName().equals("botState")) return;
+        this.handleBotStateChange(evt);
+    }
+
     protected void init() {}
 
     protected abstract void update();
+
+    protected abstract void handleBotStateChange(@NotNull PropertyChangeEvent event);
 
     protected void onStop() {}
 
@@ -44,8 +61,7 @@ public abstract class Service implements Runnable, IService {
 
     @Override
     public void run() {
-        if (running)
-            return;
+        if (running) return;
 
         running = true;
 
