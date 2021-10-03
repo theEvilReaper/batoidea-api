@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * The interface defines method that can be used to set values in a config.
  * @author theEvilReaper
  * @since 1.0.0
  * @version 1.0.0
