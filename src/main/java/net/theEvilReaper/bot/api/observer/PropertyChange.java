@@ -18,19 +18,13 @@ public interface PropertyChange {
      * @param listener The listener to add
      */
 
-    void addListener(@NotNull PropertyChangeListener listener);
+    void addChangeListener(@NotNull PropertyChangeListener listener);
 
     /**
      * Remove a {@link PropertyChangeListener}.
      * @param listener The listener to remove
      */
 
-    void removeListener(@NotNull PropertyChangeListener listener);
+    void removeChangeListener(@NotNull PropertyChangeListener listener);
 
-    /**
-     * Get a list which contains all current active {@link PropertyChangeListener}
-     * @return a list which contains the listener
-     */
-
-    List<PropertyChangeListener> getListeners();
 }
