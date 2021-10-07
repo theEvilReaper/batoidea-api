@@ -21,6 +21,16 @@ public interface CommandExecutor {
      * @param command The command itself
      * @param args The arguments from the command
      */
-
+    @Deprecated
     void onCommand(@NotNull Client executor, @NotNull String command, @Nullable String... args);
+
+    /**
+     * Executes the command callback once the syntax has been called.
+     *
+     * @param sender  the sender of the command
+     * @param command The name of the command
+     * @param args Arguments from the command
+     */
+
+    void apply(@NotNull CommandSender sender, @NotNull String command, @Nullable String... args);
 }
