@@ -15,7 +15,7 @@ import java.beans.PropertyChangeListener;
  * @since 1.0.0
  **/
 
-public interface PropertyEventCall<T> {
+public interface PropertyEventCall {
 
     /**
      * Add a {@link PropertyChangeListener} to the instance.
