@@ -1,6 +1,7 @@
 package net.theEvilReaper.bot.api.user;
 
 import com.github.manevolent.ts3j.api.Client;
+import net.theEvilReaper.bot.api.command.CommandSender;
 
 import java.util.Locale;
 
@@ -11,7 +12,7 @@ import java.util.Locale;
  * @version 1.0.0
  */
 
-public interface User {
+public interface User extends CommandSender {
 
     /**
      * Sets the current channel for the user.
@@ -41,7 +42,7 @@ public interface User {
 
     void setLocale(Locale locale);
 
-    /**
+    /**<
      * Returns the current channel from the user.
      * @return the current channel as id
      */
