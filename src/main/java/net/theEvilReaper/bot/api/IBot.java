@@ -3,6 +3,7 @@ package net.theEvilReaper.bot.api;
 import net.theEvilReaper.bot.api.database.IRedisEventManager;
 import net.theEvilReaper.bot.api.interaction.AbstractInteractionFactory;
 import net.theEvilReaper.bot.api.interaction.BotInteraction;
+import net.theEvilReaper.bot.api.property.PropertyEventCall;
 import net.theEvilReaper.bot.api.provider.IChannelProvider;
 import net.theEvilReaper.bot.api.provider.IClientProvider;
 import net.theEvilReaper.bot.api.service.ServiceRegistry;
@@ -51,7 +52,7 @@ public interface IBot extends Connectable {
 
     /**
      * Gets the state of the bot.
-     * @return Bot state.
+     * @return the current state.
      */
     BotState getState();
 
@@ -111,4 +112,11 @@ public interface IBot extends Connectable {
      */
 
     IRedisEventManager getEventManager();
+
+    /**
+     * Returns the implementation for the {@link PropertyEventCall}.
+     * @return the given instance
+     */
+
+    PropertyEventCall getPropertyEventCall();
 }
