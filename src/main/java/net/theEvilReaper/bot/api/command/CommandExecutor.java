@@ -4,8 +4,6 @@ import com.github.manevolent.ts3j.api.Client;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.logging.Logger;
-
 /**
  * Holds only a method to execute the implementation of a command.
  * @author theEvilReaper
