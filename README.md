@@ -13,5 +13,7 @@ The project represents the api that is used for the teamspeak bot (Batoidea)
 
 The project requires Java 16 or above
 
-TODO: Add more here 
+TODO:
+ - Add missing junit tests
+ - Finish api specification
 
