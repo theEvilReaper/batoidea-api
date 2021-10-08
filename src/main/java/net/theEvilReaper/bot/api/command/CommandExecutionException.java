@@ -1,11 +1,14 @@
 package net.theEvilReaper.bot.api.command;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * The exception will be thrown when an error occurred when executing commands.
  * @author theEvilReaper
  * @version 1.0.0
  * @author 1.0.0
  */
+
 public class CommandExecutionException extends Exception {
 
     /**
@@ -13,7 +16,7 @@ public class CommandExecutionException extends Exception {
      * @param message The message for the exception
      */
 
-    public CommandExecutionException(String message) {
+    public CommandExecutionException(@NotNull String message) {
         super(message);
     }
 
@@ -23,7 +26,7 @@ public class CommandExecutionException extends Exception {
      * @param cause The cause to set
      */
 
-    public CommandExecutionException(String message, Throwable cause) {
+    public CommandExecutionException(@NotNull String message, @NotNull Throwable cause) {
         super(message, cause);
     }
 
@@ -32,7 +35,7 @@ public class CommandExecutionException extends Exception {
      * @param cause The cause to set
      */
 
-    public CommandExecutionException(Throwable cause) {
+    public CommandExecutionException(@NotNull Throwable cause) {
         super(cause);
     }
 }
