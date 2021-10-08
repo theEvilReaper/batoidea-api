@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.logging.Logger;
 
 /**
- * Holds only a method to execute the implementation of an command.
+ * Holds only a method to execute the implementation of a command.
  * @author theEvilReaper
  * @version 1.0.0
  * @since 1.0.0
