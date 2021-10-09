@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.command;
+package net.theEvilReaper.bot.api.command.exception;
 
 import org.jetbrains.annotations.NotNull;
 
