@@ -27,6 +27,7 @@ public abstract class Command implements CommandExecutor {
     private final String[] aliases;
 
     private String usage;
+
     private CommandCondition condition;
 
     /**
@@ -74,14 +75,30 @@ public abstract class Command implements CommandExecutor {
         return usage;
     }
 
+    /**
+     * Returns the name of the command.
+     * @return the given name
+     */
+
     public String getName() {
         return name;
     }
+
+    /**
+     * Returns the given {@link CommandCondition} from the command.
+     * The {@link CommandCondition} can be null
+     * @return the given {@link CommandCondition}
+     */
 
     @Nullable
     public CommandCondition getCondition() {
         return condition;
     }
+
+    /**
+     * Returns the given aliases from the command.
+     * @return the given aliases as string array
+     */
 
     @Nullable
     public String[] getAliases() {

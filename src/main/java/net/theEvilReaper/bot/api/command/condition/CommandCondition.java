@@ -13,5 +13,13 @@ import org.jetbrains.annotations.Nullable;
 @FunctionalInterface
 public interface CommandCondition {
 
+    /**
+     * Called when the sender needs to be checked.
+     *
+     * @param sender The sender of the command
+     * @param command The command as string
+     * @return True if the sender can use the command otherwise false
+     */
+
     boolean canUse(@NotNull CommandSender sender, @Nullable String command);
 }
