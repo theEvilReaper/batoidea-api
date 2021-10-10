@@ -23,4 +23,9 @@ public class ConsoleSender implements CommandSender {
     public boolean isConsole() {
         return true;
     }
+
+    @Override
+    public String getName() {
+        return "Console";
+    }
 }
