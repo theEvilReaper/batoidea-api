@@ -39,6 +39,13 @@ public interface CommandSender {
     }
 
     /**
+     * Returns the name of the {@link CommandSender}.
+     * @return the given name
+     */
+
+    String getName();
+
+    /**
      * Gets if the sender is a {@link ConsoleSender}.
      *
      * @return true if 'this' is the console, false otherwise
