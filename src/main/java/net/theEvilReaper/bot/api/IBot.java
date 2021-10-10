@@ -3,14 +3,13 @@ package net.theEvilReaper.bot.api;
 import net.theEvilReaper.bot.api.database.IRedisEventManager;
 import net.theEvilReaper.bot.api.interaction.AbstractInteractionFactory;
 import net.theEvilReaper.bot.api.interaction.BotInteraction;
-import net.theEvilReaper.bot.api.observer.PropertyChange;
+import net.theEvilReaper.bot.api.property.PropertyEventCall;
 import net.theEvilReaper.bot.api.provider.IChannelProvider;
 import net.theEvilReaper.bot.api.provider.IClientProvider;
 import net.theEvilReaper.bot.api.service.ServiceRegistry;
 import net.theEvilReaper.bot.api.user.IUserService;
 import org.jetbrains.annotations.NotNull;
 
-import java.beans.PropertyChangeSupport;
 import java.util.logging.Logger;
 
 /**
@@ -19,7 +18,7 @@ import java.util.logging.Logger;
  * @since 1.0.0
  **/
 
-public interface IBot extends Connectable, PropertyChange {
+public interface IBot extends Connectable {
 
     /**
      * Gets if the bot is running.
@@ -53,7 +52,7 @@ public interface IBot extends Connectable, PropertyChange {
 
     /**
      * Gets the state of the bot.
-     * @return Bot state.
+     * @return the current state.
      */
     BotState getState();
 
@@ -114,5 +113,10 @@ public interface IBot extends Connectable, PropertyChange {
 
     IRedisEventManager getEventManager();
 
-    PropertyChangeSupport getStateChange();
+    /**
+     * Returns the implementation for the {@link PropertyEventCall}.
+     * @return the given instance
+     */
+
+    PropertyEventCall getPropertyEventCall();
 }
