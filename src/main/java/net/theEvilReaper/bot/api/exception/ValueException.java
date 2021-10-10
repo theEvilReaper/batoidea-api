@@ -1,7 +1,7 @@
 package net.theEvilReaper.bot.api.exception;
 
 /**
- *The exception is used when there is a value in the context that is not allowed.
+ * The exception is used when there is a value in the context that is not allowed.
  * @author theEvilReaper
  * @version 1.0.0
  * @since 1.0.0
