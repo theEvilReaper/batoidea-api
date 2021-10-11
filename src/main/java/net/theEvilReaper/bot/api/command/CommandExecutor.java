@@ -1,6 +1,5 @@
 package net.theEvilReaper.bot.api.command;
 
-import com.github.manevolent.ts3j.api.Client;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -12,15 +11,6 @@ import org.jetbrains.annotations.Nullable;
  **/
 
 public interface CommandExecutor {
-
-    /**
-     * The method holds the logic for each command implementation of the bot.
-     * @param executor The client who executed the command
-     * @param command The command itself
-     * @param args The arguments from the command
-     */
-    @Deprecated
-    void onCommand(@NotNull Client executor, @NotNull String command, @Nullable String... args);
 
     /**
      * Executes the command callback once the syntax has been called.
