@@ -1,5 +1,6 @@
 package net.theEvilReaper.bot.api.command;
 
+import net.theEvilReaper.bot.api.command.result.CommandResult;
 import net.theEvilReaper.bot.api.util.Conditions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -35,6 +36,14 @@ public interface CommandManager {
     }
 
     /**
+     * Check if a command with the name is currently registered.
+     * @param commandName The name of the command
+     * @return True when a command is registered with the name otherwise false
+     */
+
+    boolean hasCommand(@NotNull String commandName);
+
+    /**
      * Change set current used prefix for the command
      * @param prefix The new prefix to set
      */
@@ -59,7 +68,8 @@ public interface CommandManager {
      * //TODO: Do we need as `CommandResult`to indicate what happen when the command fails to execute?
      */
 
-    boolean executeCommand(@NotNull ConsoleSender sender, @NotNull String command, @NotNull String... args);
+    @NotNull
+    CommandResult executeCommand(@NotNull ConsoleSender sender, @NotNull String command, @Nullable String... args);
 
     /**
      * Gets the callback executed once an unknown command is run.
