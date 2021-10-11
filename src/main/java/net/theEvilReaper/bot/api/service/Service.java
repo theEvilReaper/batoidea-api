@@ -15,6 +15,7 @@ import java.util.logging.Logger;
  * @since 1.0.0
  **/
 
+@Deprecated(forRemoval = true)
 //TODO: Rework
 public abstract class Service implements Runnable, IService, PropertyChangeListener {
 
@@ -101,7 +102,7 @@ public abstract class Service implements Runnable, IService, PropertyChangeListe
     }
 
     @Override
-    public void setReady(boolean ready) {
+    public void setCanUse(boolean ready) {
         this.ready = ready;
     }
 
@@ -119,7 +120,7 @@ public abstract class Service implements Runnable, IService, PropertyChangeListe
     }
 
     @Override
-    public boolean isReady() {
+    public boolean canUse() {
         return ready;
     }
 
