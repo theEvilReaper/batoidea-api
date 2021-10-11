@@ -16,14 +16,14 @@ public interface CommandManager {
 
     /**
      * Unregister a {@link Command}.
-     * @param command The {@link Command} to ungregister
+     * @param command The {@link Command} to unregister
      */
 
     void unregister(@NotNull Command command);
 
     /**
      * Unregister a {@link Command} by the name.
-     * The method make a lookup to underlying map where all command are registerd.
+     * The method make a lookup to underlying map where all command are registered.
      * When the result then nothing will happen
      * @param commandName The name from the command
      */
