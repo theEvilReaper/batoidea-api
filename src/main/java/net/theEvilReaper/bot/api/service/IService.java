@@ -1,26 +1,28 @@
 package net.theEvilReaper.bot.api.service;
 
+import java.beans.PropertyChangeListener;
+
 /**
  * @author theEvilReaper
- * @version 1.0.0
+ * @version 1.0.1
  * @since 1.0.0
  **/
 
-public interface IService {
+public interface IService extends PropertyChangeListener {
 
     /**
-     * Change the ready state from the bot.
-     * @param ready The new state
+     * Change use state of the service.
+     * @param canUse The new state
      */
 
-    void setReady(boolean ready);
+    void setCanUse(boolean canUse);
 
     /**
-     * Returns if the service is ready.
+     * Returns if the service can be used.
      * @return the underlying boolean value
      */
 
-    boolean isReady();
+    boolean canUse();
 
     /**
      * Returns the name of the service.
