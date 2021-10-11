@@ -4,7 +4,7 @@ import net.theEvilReaper.bot.api.command.Command;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public record CommandResult(@NotNull String input, @Nullable Command command, @NotNull CommandResult.ResultType type) {
+public record CommandResult(@NotNull String input, @Nullable Command command, @NotNull CommandResult.ResultType type, @Nullable String... args) {
 
     /**
      * Method to create a new instance from the {@link CommandResult}.
@@ -14,8 +14,8 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
      * @return the created {@link CommandResult}
      */
 
-    public static CommandResult of(@NotNull String input, @NotNull Command command, @NotNull CommandResult.ResultType type) {
-        return new CommandResult(input, command, type);
+    public static CommandResult of(@NotNull String input, @NotNull Command command, @NotNull CommandResult.ResultType type, @Nullable String... args) {
+        return new CommandResult(input, command, type, args);
     }
 
     /**
