@@ -24,10 +24,6 @@ public interface UserInteraction extends Interaction {
 
     void pokeClient(int clientID, @NotNull String message);
 
-    void addPermission(int clientDatabaseID, @Nullable Permission... permissions);
-
-    void removePermission(int clientDatabaseID, @Nullable Permission... permissions);
-
     default void moveToChannel(@NotNull Client client, Channel channel) {
         this.moveToChannel(channel.getId(), client, null);
     }
