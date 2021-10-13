@@ -30,6 +30,12 @@ public abstract class Config implements IConfig {
     public abstract void save();
 
     /**
+     * Creates the default config.
+     */
+
+    protected abstract void generateDefaultConfig();
+
+    /**
      * Sets a string into a given file.
      * @param key The name of the key
      * @param value The value to set
