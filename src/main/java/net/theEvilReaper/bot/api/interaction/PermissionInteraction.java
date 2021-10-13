@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
  **/
 
 //TODO: Add method for the permission handling with channel or own class?
-public interface PermissionInteraction {
+public interface PermissionInteraction extends Interaction {
 
     /**
      * Add a new single permission or an array with permission to the given client.
