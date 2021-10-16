@@ -33,5 +33,5 @@ public interface ServiceRegistry {
      */
 
     @Nullable
-    IService getService(@NotNull String serviceName);
+    <T extends IService> T getService(@NotNull String serviceName);
 }
