@@ -24,6 +24,8 @@ public class Strings {
 
     public static final String SPACE = " ";
 
+    public static final Pattern SPACE_PATTERN = Pattern.compile(SPACE);
+
     private static final Pattern DOMAIN_PATTERN =
             Pattern.compile("(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]");
 
