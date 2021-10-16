@@ -22,6 +22,13 @@ public interface User {
     void refresh(@NotNull Client client);
 
     /**
+     * Set a new main group for the {@link User}.
+     * @param groupID The id to set
+     */
+
+    void setMainGroup(int groupID);
+
+    /**
      * Sets the current channel for the user.
      * @param channelID The new channel id
      */
@@ -76,6 +83,16 @@ public interface User {
      */
 
     boolean isVerified();
+
+    /**
+     * Check if the main group id equals the given id.
+     * @param groupID The id to check
+     * @return True if the ids are equal otherwise false
+     */
+
+    default boolean hasMainGroup(int groupID) {
+        return getMainGroup() == groupID;
+    }
 
     /**
      * Checks if the user is in the given group.
