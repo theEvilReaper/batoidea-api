@@ -1,6 +1,7 @@
 package net.theEvilReaper.bot.api.user;
 
 import com.github.manevolent.ts3j.api.Client;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
 
@@ -12,6 +13,13 @@ import java.util.Locale;
  */
 
 public interface User {
+
+    /**
+     * Refresh the underlying {@link Client} object.
+     * @param client The object to update
+     */
+
+    void refresh(@NotNull Client client);
 
     /**
      * Sets the current channel for the user.
@@ -68,6 +76,25 @@ public interface User {
      */
 
     boolean isVerified();
+
+    /**
+     * Checks if the user is in the given group.
+     * @return the id from the group
+     */
+
+    default boolean hasGroup(int groupId) {
+        boolean hasGroup = false;
+
+        var groups = getGroups();
+
+        for (int i = 0; i < groups.length && !hasGroup; i++) {
+            if (groups[i] == groupId) {
+                hasGroup = true;
+            }
+        }
+
+        return hasGroup;
+    }
 
     /**
      * Returns the language from the user as {@link Locale}.
