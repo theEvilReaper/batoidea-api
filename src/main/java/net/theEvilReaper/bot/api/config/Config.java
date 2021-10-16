@@ -1,10 +1,12 @@
 package net.theEvilReaper.bot.api.config;
 
 import net.theEvilReaper.bot.api.util.Conditions;
+import net.theEvilReaper.bot.api.util.Strings;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Properties;
+import java.util.regex.Pattern;
 
 /**
  * The class is the basic implementation of the {@link IConfig}.
@@ -14,6 +16,8 @@ import java.util.Properties;
  */
 
 public abstract class Config implements IConfig {
+
+    protected static final Pattern SPLIT_PATTERN = Pattern.compile(",");
 
     protected Properties properties;
 
@@ -89,7 +93,7 @@ public abstract class Config implements IConfig {
 
     /**
      * Get a string from a given file.
-     * @param key The key to determine the string.
+     * @param key The key to determine the string
      * @return the fetched string
      */
 
@@ -103,7 +107,7 @@ public abstract class Config implements IConfig {
 
     /**
      * Get an int from a given file.
-     * @param key The key to determine the string.
+     * @param key The key to determine the string
      * @return the fetched int
      */
 
@@ -116,7 +120,7 @@ public abstract class Config implements IConfig {
 
     /**
      * Get a double from a given file.
-     * @param key The key to determine the string.
+     * @param key The key to determine the string
      * @return the fetched double
      */
 
@@ -129,7 +133,7 @@ public abstract class Config implements IConfig {
 
     /**
      * Get a long from a given file.
-     * @param key The key to determine the string.
+     * @param key The key to determine the string
      * @return the fetched double
      */
 
@@ -138,5 +142,22 @@ public abstract class Config implements IConfig {
         Conditions.checkPropertiesState(properties);
         Conditions.checkForEmpty(key);
         return Long.parseLong(properties.getProperty(key));
+    }
+
+    /**
+     * Get a string array from the properties.
+     * @param key The key to determine the array
+     * @return the fetched array
+     */
+
+    @Override
+    public String[] getArray(@NotNull String key) {
+        var arrayAsString = getString(key);
+
+        if (arrayAsString == null || !SPLIT_PATTERN.matcher(arrayAsString).matches()) {
+            return Strings.EMPTY_ARRAY;
+        }
+
+        return SPLIT_PATTERN.split(arrayAsString);
     }
 }

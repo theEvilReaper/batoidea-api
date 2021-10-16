@@ -45,7 +45,7 @@ public interface IConfig {
     void setLong(@NotNull String key, long value);
 
     /**
-     * Get a string from a given file.
+     * Get a string from the properties.
      * @param key The key to determine the string.
      * @return the fetched string
      */
@@ -54,7 +54,7 @@ public interface IConfig {
     String getString(@NotNull String key);
 
     /**
-     * Get an int from a given file.
+     * Get an int from the properties.
      * @param key The key to determine the string.
      * @return the fetched int
      */
@@ -62,7 +62,7 @@ public interface IConfig {
     int getInt(@NotNull String key);
 
     /**
-     * Get a double from a given file.
+     * Get a double from the properties.
      * @param key The key to determine the string.
      * @return the fetched double
      */
@@ -70,10 +70,18 @@ public interface IConfig {
     double getDouble(@NotNull String key);
 
     /**
-     * Get a long from a given file.
+     * Get a long from the properties.
      * @param key The key to determine the string.
      * @return the fetched double
      */
 
     long getLong(@NotNull String key);
+
+    /**
+     * Get a string array from the properties.
+     * @param key The key to determine the array
+     * @return the fetched array
+     */
+
+    String[] getArray(@NotNull String key);
 }
