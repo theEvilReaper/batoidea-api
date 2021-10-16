@@ -4,6 +4,7 @@ import net.theEvilReaper.bot.api.util.Conditions;
 import org.jetbrains.annotations.NotNull;
 
 import java.beans.PropertyChangeEvent;
+import java.util.Objects;
 
 /**
  * @author theEvilReaper
@@ -32,6 +33,19 @@ public abstract class StaticService implements IService {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         handlePropertyChange(evt);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StaticService that = (StaticService) o;
+        return Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 
     @Override
