@@ -52,8 +52,9 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
         /**
          * Command and syntax successfully found.
          */
-        SUCCESS,
+        SUCCESS;
 
+        //TODO: Add more result types like parsing error or something
 
     }
 }
