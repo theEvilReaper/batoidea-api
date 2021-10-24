@@ -1,9 +1,6 @@
 package net.theEvilReaper.bot.api.command;
 
 import net.theEvilReaper.bot.api.command.condition.CommandCondition;
-import net.theEvilReaper.bot.api.interaction.AbstractInteractionFactory;
-import net.theEvilReaper.bot.api.interaction.InteractionType;
-import net.theEvilReaper.bot.api.interaction.UserInteraction;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -16,8 +13,6 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class Command implements CommandExecutor {
 
-    protected UserInteraction userInteraction;
-
     private final String name;
     private final String[] aliases;
 
@@ -26,14 +21,24 @@ public abstract class Command implements CommandExecutor {
     private CommandCondition condition;
 
     /**
-     * Creates a new instance from the {@link Command}.
-     * @param factory the {@link AbstractInteractionFactory} to get the {@link UserInteraction}
+     * Create a new instance from the {@link Command} with the given values.
+     * @param name The name of the command
+     * @param aliases The aliases for the command
      */
 
-    public Command(@NotNull AbstractInteractionFactory factory, @NotNull String name, @Nullable String... aliases) {
-        this.userInteraction = factory.getInteraction(InteractionType.CLIENT, UserInteraction.class);
+    public Command(@NotNull String name, @Nullable String... aliases) {
         this.name = name;
         this.aliases = aliases;
+    }
+
+    /**
+     * Create a new instance from the {@link Command} with the given values.
+     * @param name The name of the command
+     */
+
+    public Command(@NotNull String name) {
+        this.name = name;
+        this.aliases = null;
     }
 
     /**
@@ -50,7 +55,7 @@ public abstract class Command implements CommandExecutor {
      * @param usage the usage to set
      */
 
-    public void setUsage(String usage) {
+    public void setUsage(@NotNull String usage) {
         this.usage = usage;
     }
 
