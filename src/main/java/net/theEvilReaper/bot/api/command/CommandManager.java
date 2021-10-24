@@ -69,7 +69,7 @@ public interface CommandManager {
      */
 
     @NotNull
-    CommandResult executeCommand(@NotNull ConsoleSender sender, @NotNull String command, @Nullable String... args);
+    CommandResult executeCommand(@NotNull CommandSender sender, @NotNull String command, @Nullable String... args);
 
     /**
      * Gets the callback executed once an unknown command is run.
@@ -96,4 +96,13 @@ public interface CommandManager {
 
     @NotNull
     ConsoleSender getConsoleSender();
+
+
+    /**
+     * Returns the current command prefix.
+     * @return the given prefix
+     */
+
+    @NotNull
+    String getCommandPrefix();
 }
