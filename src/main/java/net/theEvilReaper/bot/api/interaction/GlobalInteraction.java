@@ -10,5 +10,9 @@ import org.jetbrains.annotations.NotNull;
 
 public interface GlobalInteraction extends Interaction {
 
-    void broadcastMessage(@NotNull String message);
+    void broadcast(@NotNull String message);
+
+    void broadcast(@NotNull String... messages);
+
+    void broadcast(int groupID, @NotNull String message);
 }

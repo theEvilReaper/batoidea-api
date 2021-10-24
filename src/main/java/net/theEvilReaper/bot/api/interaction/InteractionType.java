@@ -11,7 +11,8 @@ public enum InteractionType {
     CLIENT((byte)0),
     GROUP((byte)1),
     SERVER((byte)2),
-    CHANNEL((byte)3);
+    CHANNEL((byte)3),
+    PERMISSION((byte)4);
 
     //Reduces the defensive copies of the array when calls the values[] method
     private static final InteractionType[] VALUES = values();

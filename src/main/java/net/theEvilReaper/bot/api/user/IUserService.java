@@ -23,6 +23,15 @@ public interface IUserService extends IService {
     void addUser(@NotNull Client client);
 
     /**
+     * Removes a user from the service
+     * @param client The client to remove the id
+     */
+
+    default void removeUser(@NotNull Client client) {
+        removeUser(client.getDatabaseId());
+    }
+
+    /**
      * Remove a user to the service.
      * @param clientID The client id from the user
      */
