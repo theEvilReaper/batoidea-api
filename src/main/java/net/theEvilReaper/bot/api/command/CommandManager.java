@@ -65,7 +65,6 @@ public interface CommandManager {
      * @param command The name from the command as {@link String}
      * @param args The Arguments for the command as {@link String} array
      * @return True when the command can be executed otherwise false
-     * //TODO: Do we need as `CommandResult`to indicate what happen when the command fails to execute?
      */
 
     @NotNull
