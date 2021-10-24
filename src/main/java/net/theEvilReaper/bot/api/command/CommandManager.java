@@ -89,15 +89,6 @@ public interface CommandManager {
     Command getCommand(@NotNull String commandName);
 
     /**
-     * Gets the {@link ConsoleSender} (which is used as a {@link CommandSender}).
-     * @return the {@link ConsoleSender}
-     */
-
-    @NotNull
-    ConsoleSender getConsoleSender();
-
-
-    /**
      * Returns the current command prefix.
      * @return the given prefix
      */
