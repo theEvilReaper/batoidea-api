@@ -2,8 +2,7 @@ package net.theEvilReaper.bot.api.command;
 
 import org.jetbrains.annotations.NotNull;
 
-import static net.theEvilReaper.bot.api.util.Strings.EMPTY_ARRAY;
-import static net.theEvilReaper.bot.api.util.Strings.SPLIT_PATTERN;
+import static net.theEvilReaper.bot.api.util.Strings.*;
 
 /**
  * The interface includes a method where a developer can implement a way,
@@ -23,7 +22,7 @@ public interface CommandParser {
      */
 
     default void parse(@NotNull CommandManager commandManager, @NotNull CommandSender sender, @NotNull String input) {
-        var split = SPLIT_PATTERN.split(input);
+        var split = SPACE_PATTERN.split(input);
 
         if (split.length == 0) return;
 
