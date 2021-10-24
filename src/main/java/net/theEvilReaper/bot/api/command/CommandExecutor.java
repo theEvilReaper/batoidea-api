@@ -1,13 +1,10 @@
 package net.theEvilReaper.bot.api.command;
 
-import com.github.manevolent.ts3j.api.Client;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.logging.Logger;
-
 /**
- * Holds only a method to execute the implementation of an command.
+ * Holds only a method to execute the implementation of a command.
  * @author theEvilReaper
  * @version 1.0.0
  * @since 1.0.0
@@ -16,11 +13,12 @@ import java.util.logging.Logger;
 public interface CommandExecutor {
 
     /**
-     * The method holds the logic for each command implementation of the bot.
-     * @param executor The client who executed the command
-     * @param command The command itself
-     * @param args The arguments from the command
+     * Executes the command callback once the syntax has been called.
+     *
+     * @param sender  the sender of the command
+     * @param command The name of the command
+     * @param args Arguments from the command
      */
 
-    void onCommand(@NotNull Client executor, @NotNull String command, @Nullable String... args);
+    void apply(@NotNull CommandSender sender, @NotNull String command, @Nullable String... args);
 }
