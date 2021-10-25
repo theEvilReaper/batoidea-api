@@ -4,6 +4,8 @@ import net.theEvilReaper.bot.api.command.Command;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Arrays;
+
 public record CommandResult(@NotNull String input, @Nullable Command command, @NotNull CommandResult.ResultType type, @Nullable String... args) {
 
     /**
@@ -39,6 +41,7 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
                 "input='" + input + '\'' +
                 ", command=" + command +
                 ", type=" + type.name() +
+                ", args=" + (args != null && args.length == 0 ? "null" : Arrays.toString(args)) +
                 '}';
     }
 
