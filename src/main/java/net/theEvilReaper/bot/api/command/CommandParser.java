@@ -23,16 +23,14 @@ public interface CommandParser {
 
     default void parse(@NotNull CommandManager commandManager, @NotNull CommandSender sender, @NotNull String input) {
         var split = SPACE_PATTERN.split(input);
-
-        if (split.length == 0) return;
-
         String command = split[0];
-        String[] arguments = split.length == 1 ? EMPTY_ARRAY : new String[split.length - 1];
 
-        if (arguments.length > 1) {
-            System.arraycopy(split, 1, arguments, 0, split.length - 1);
+        if (split.length == 1) {
+            commandManager.executeCommand(sender, command, EMPTY_ARRAY);
         }
 
+        String[] arguments = new String[split.length - 1];
+        System.arraycopy(split, 1, arguments, 0, split.length - 1);
         commandManager.executeCommand(sender, command, arguments);
     }
 }
