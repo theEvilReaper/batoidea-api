@@ -1,5 +1,6 @@
 package net.theEvilReaper.bot.api;
 
+import net.theEvilReaper.bot.api.command.CommandManager;
 import net.theEvilReaper.bot.api.database.IRedisEventManager;
 import net.theEvilReaper.bot.api.interaction.AbstractInteractionFactory;
 import net.theEvilReaper.bot.api.interaction.BotInteraction;
@@ -119,4 +120,11 @@ public interface IBot extends Connectable {
      */
 
     PropertyEventCall getPropertyEventCall();
+
+    /**
+     * Returns the implementation from the {@link CommandManager}.
+     * @return the given instance
+     */
+
+    CommandManager getCommandManager();
 }
