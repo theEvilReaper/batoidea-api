@@ -1,6 +1,7 @@
 package net.theEvilReaper.bot.api;
 
 import net.theEvilReaper.bot.api.command.CommandManager;
+import net.theEvilReaper.bot.api.config.BotConfig;
 import net.theEvilReaper.bot.api.database.IRedisEventManager;
 import net.theEvilReaper.bot.api.interaction.AbstractInteractionFactory;
 import net.theEvilReaper.bot.api.interaction.BotInteraction;
@@ -127,4 +128,11 @@ public interface IBot extends Connectable {
      */
 
     CommandManager getCommandManager();
+
+    /**
+     * Returns the given instance to the config for the {@link IBot}
+     * @return the given {@link BotConfig} instance
+     */
+
+    BotConfig getConfig();
 }
