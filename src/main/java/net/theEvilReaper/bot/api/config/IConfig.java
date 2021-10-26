@@ -45,6 +45,14 @@ public interface IConfig {
     void setLong(@NotNull String key, long value);
 
     /**
+     * Set a string array into a given file.
+     * @param key The name of the key
+     * @param values The array to set
+     */
+
+    void setStringArray(@NotNull String key, String... values);
+
+    /**
      * Get a string from the properties.
      * @param key The key to determine the string.
      * @return the fetched string

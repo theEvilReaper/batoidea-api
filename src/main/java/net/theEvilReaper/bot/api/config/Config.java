@@ -91,6 +91,26 @@ public abstract class Config implements IConfig {
         properties.setProperty(key, String.valueOf(value));
     }
 
+
+    @Override
+    public void setStringArray(@NotNull String key, String... values) {
+        Conditions.checkPropertiesState(properties);
+        Conditions.checkForEmpty(key);
+
+        if (values.length == 0) {
+            this.properties.setProperty(key, null);
+            return;
+        }
+
+        var builder = new StringBuilder();
+
+        for (int i = 0; i < values.length; i++) {
+            builder.append(values[i]).append(values.length < i ? "" : ",");
+        }
+        var result = builder.toString().trim();
+        this.properties.setProperty(key, result);
+    }
+
     /**
      * Get a string from a given file.
      * @param key The key to determine the string
