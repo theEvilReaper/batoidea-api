@@ -77,6 +77,15 @@ public interface BotConfig extends IConfig {
     }
 
     /**
+     * Set's the blocked groups for the bot.
+     * @param groups The groups to set as string array
+     */
+
+    default void setBlockedGroups(String... groups) {
+        this.setStringArray("blockedGroups", groups);
+    }
+
+    /**
      * Returns the name from the bot.
      * @return the name
      */
@@ -142,5 +151,21 @@ public interface BotConfig extends IConfig {
 
     default int getDefaultChannel() {
         return this.getInt("defaultChannel");
+    }
+
+    default int[] getBlockedGroups() {
+        var groups = this.getArray("blockedGroups");
+
+        if (groups.length == 0) {
+            return null;
+        }
+
+        var mappedGroup = new int[groups.length];
+
+        for (int i = 0; i < groups.length; i++) {
+            mappedGroup[i] = Integer.parseInt(groups[i]);
+        }
+
+        return mappedGroup;
     }
 }
