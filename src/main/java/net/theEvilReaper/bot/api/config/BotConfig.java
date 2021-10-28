@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 public interface BotConfig extends IConfig {
 
     long DEFAULT_TIMEOUT = 5_000L;
+    int DEFAULT_PORT = 9987;
 
     /**
      * Sets a new name for the bot.
@@ -38,6 +39,16 @@ public interface BotConfig extends IConfig {
 
     default void setServer(@NotNull String server) {
         this.setString("server", server);
+    }
+
+    /**
+     * Set the port from the teamspeak server into the file.
+     * When the port is zero than will be set the default port
+     * @param port The port to set
+     */
+
+    default void setPort(int port) {
+        this.setInt("port", port == 0 ? DEFAULT_PORT : port);
     }
 
     /**
@@ -114,6 +125,16 @@ public interface BotConfig extends IConfig {
     }
 
     /**
+     * Returns the port from the teamspeak server.
+     * @return the port from the server
+     */
+
+    default int getPort() {
+        var port = this.getInt("port");
+        return port != 0 ? port : DEFAULT_PORT;
+    }
+
+    /**
      * Returns the password for the teamspeak server.
      * It can be empty when the server has no password set.
      * @return the password
@@ -134,7 +155,7 @@ public interface BotConfig extends IConfig {
 
     /**
      * Returns the connection timeout.
-     * When the timeout is null the bot use a default timeout.
+     * When the timeout is null the bot use a default timeout
      * The default value is 5000L.
      * @return the given timeout as long
      */
@@ -145,13 +166,18 @@ public interface BotConfig extends IConfig {
     }
 
     /**
-     * Returns the channel into which the bot should join
+     * Returns the channel into which the bot should join.
      * @return the channel as int
      */
 
     default int getDefaultChannel() {
         return this.getInt("defaultChannel");
     }
+
+    /**
+     * Returns all groups which the bot should ignore.
+     * @return the groups as int array
+     */
 
     default int[] getBlockedGroups() {
         var groups = this.getArray("blockedGroups");
