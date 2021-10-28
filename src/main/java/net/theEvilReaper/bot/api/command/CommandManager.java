@@ -62,8 +62,8 @@ public interface CommandManager {
     /**
      * Executes a {@link Command} for a {@link CommandSender}
      * @param sender The {@link CommandSender} who execute the command
-     * @param command The name from the command as {@link String}
-     * @param args The Arguments for the command as {@link String} array
+     * @param command The name from the {@link Command} as {@link String}
+     * @param args The Arguments for the {@link Command} as {@link String} array
      * @return True when the command can be executed otherwise false
      */
 
@@ -80,8 +80,8 @@ public interface CommandManager {
 
     /**
      * Returns the {@link Command} object that matches with the given commandName
-     * The result can be null when there is no command for the name.
-     * @param commandName The name from the Command as string
+     * The result can be null when there is no {@link Command} for the name.
+     * @param commandName The name from the {@link Command} as string
      * @return The fetched {@link Command} class.
      */
 
