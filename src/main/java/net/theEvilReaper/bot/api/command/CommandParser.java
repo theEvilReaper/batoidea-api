@@ -26,7 +26,8 @@ public interface CommandParser {
         String command = split[0];
 
         if (split.length == 1) {
-            commandManager.executeCommand(sender, command, EMPTY_ARRAY);
+            commandManager.executeCommand(sender, command);
+            return;
         }
 
         String[] arguments = new String[split.length - 1];
