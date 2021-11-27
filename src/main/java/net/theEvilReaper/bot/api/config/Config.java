@@ -91,6 +91,11 @@ public abstract class Config implements IConfig {
         properties.setProperty(key, String.valueOf(value));
     }
 
+    /**
+     * Set an array with strings into the given {@link Properties}.
+     * @param key The name of the key
+     * @param values The array to set
+     */
 
     @Override
     public void setStringArray(@NotNull String key, String... values) {
