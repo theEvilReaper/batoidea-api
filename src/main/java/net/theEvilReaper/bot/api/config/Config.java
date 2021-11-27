@@ -105,8 +105,13 @@ public abstract class Config implements IConfig {
         var builder = new StringBuilder();
 
         for (int i = 0; i < values.length; i++) {
-            builder.append(values[i]).append(values.length < i ? "" : ",");
+            builder.append(values[i]);
+
+            if (i < values.length - 1) {
+                builder.append(",");
+            }
         }
+
         var result = builder.toString().trim();
         this.properties.setProperty(key, result);
     }
