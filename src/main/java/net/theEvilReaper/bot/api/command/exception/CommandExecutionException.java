@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
  * @author 1.0.0
  */
 
-public class CommandExecutionException extends Exception {
+public class CommandExecutionException extends RuntimeException {
 
     /**
      * Creates a new instance from the class.
