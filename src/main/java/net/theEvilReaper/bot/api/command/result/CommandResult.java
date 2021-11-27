@@ -41,7 +41,7 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
                 "input='" + input + '\'' +
                 ", command=" + command +
                 ", type=" + type.name() +
-                ", args=" + (args != null && args.length == 0 ? "null" : Arrays.toString(args)) +
+                ", args=" + (args == null || args.length == 0 ? "null" : Arrays.toString(args)) +
                 '}';
     }
 
