@@ -1,6 +1,8 @@
 package net.theEvilReaper.bot.api.command.condition;
 
 import net.theEvilReaper.bot.api.command.CommandSender;
+import net.theEvilReaper.bot.api.command.ConsoleSender;
+import net.theEvilReaper.bot.api.user.User;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,14 +19,13 @@ public class CommandConditions {
 
     /**
      * Checks if the {@link CommandSender} is a user.
-     * @param commandSender The {@link CommandSender} to check
+     * @param sender The {@link CommandSender} to check
      * @param message The message to send
      * @return True when the {@link CommandSender} is a user otherwise false
      */
-
-    public static boolean forUserOnly(@NotNull CommandSender commandSender, @Nullable String message) {
-        if (!commandSender.isUser()) {
-            commandSender.sendMessage(message == null ? ONLY_FOR_USER : message);
+    public static boolean isUser(@NotNull CommandSender sender, @Nullable String message) {
+        if (!(sender instanceof User)) {
+            sender.sendMessage(message == null ? ONLY_FOR_USER : message);
             return false;
         }
         return true;
@@ -32,14 +33,13 @@ public class CommandConditions {
 
     /**
      * Checks if the {@link CommandSender} is the console.
-     * @param commandSender The {@link CommandSender} to check
+     * @param sender The {@link CommandSender} to check
      * @param message The message to send
      * @return True when the {@link CommandSender} is the console otherwise false
      */
-
-    public static boolean forConsoleOnly(@NotNull CommandSender commandSender, @Nullable String message) {
-        if (!commandSender.isConsole()) {
-            commandSender.sendMessage(message == null ? ONLY_FOR_CONSOLE : message);
+    public static boolean forConsoleOnly(@NotNull CommandSender sender, @Nullable String message) {
+        if (!(sender instanceof ConsoleSender)) {
+            sender.sendMessage(message == null ? ONLY_FOR_CONSOLE : message);
             return false;
         }
         return true;
