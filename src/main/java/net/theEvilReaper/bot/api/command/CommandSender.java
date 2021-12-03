@@ -51,6 +51,7 @@ public interface CommandSender {
      * @return true if 'this' is the console, false otherwise
      */
 
+    @Deprecated(forRemoval = true, since = "please use instanceof instead")
     default boolean isConsole() {
         return false;
     }
@@ -61,6 +62,7 @@ public interface CommandSender {
      * @return true if 'this' is a player, false otherwise
      */
 
+    @Deprecated(forRemoval = true, since = "please use instanceof instead")
     default boolean isUser() {
         return false;
     }
