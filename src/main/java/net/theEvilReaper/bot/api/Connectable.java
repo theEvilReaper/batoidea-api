@@ -1,5 +1,11 @@
 package net.theEvilReaper.bot.api;
 
+/**
+ * The interface defines an object which can connect to a server / service.
+ * @author theEvilReaper
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 public interface Connectable {
 
     /**
