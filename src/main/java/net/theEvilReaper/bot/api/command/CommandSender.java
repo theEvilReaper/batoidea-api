@@ -20,7 +20,6 @@ public interface CommandSender {
      *
      * @param message the message to send
      */
-
     void sendMessage(@NotNull String message);
 
     /**
@@ -29,7 +28,6 @@ public interface CommandSender {
      *
      * @param messages the messages to send
      */
-
     default void sendMessage(@NotNull String... messages) {
         if (messages.length == 0) return;
 
@@ -42,28 +40,5 @@ public interface CommandSender {
      * Returns the name of the {@link CommandSender}.
      * @return the given name
      */
-
     String getName();
-
-    /**
-     * Gets if the sender is a {@link ConsoleSender}.
-     *
-     * @return true if 'this' is the console, false otherwise
-     */
-
-    @Deprecated(forRemoval = true, since = "please use instanceof instead")
-    default boolean isConsole() {
-        return false;
-    }
-
-    /**
-     * Gets if the sender is a {@link net.theEvilReaper.bot.api.user.User}.
-     *
-     * @return true if 'this' is a player, false otherwise
-     */
-
-    @Deprecated(forRemoval = true, since = "please use instanceof instead")
-    default boolean isUser() {
-        return false;
-    }
 }
