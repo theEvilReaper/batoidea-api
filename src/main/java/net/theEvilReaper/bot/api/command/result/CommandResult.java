@@ -1,10 +1,19 @@
 package net.theEvilReaper.bot.api.command.result;
 
 import net.theEvilReaper.bot.api.command.Command;
+import net.theEvilReaper.bot.api.util.Conditions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
+
+/**
+ * The {@link CommandResult} represents the return value of each command that should be executed.
+ * The result includes some additional information which shows what goes wrong.
+ * The class is in some cases not perfect, but it's better to have something than only a boolean value
+ * @since 1.0.0
+ * @version 1.0.0
+ */
 
 public record CommandResult(@NotNull String input, @Nullable Command command, @NotNull CommandResult.ResultType type, @Nullable String... args) {
 
@@ -17,6 +26,7 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
      */
 
     public static CommandResult of(@NotNull String input, @NotNull Command command, @NotNull CommandResult.ResultType type, @Nullable String... args) {
+        Conditions.checkForEmpty(input);
         return new CommandResult(input, command, type, args);
     }
 
@@ -27,6 +37,7 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
      */
 
     public static CommandResult ofUnknown(@NotNull String input) {
+        Conditions.checkForEmpty(input);
         return new CommandResult(input, null, ResultType.UNKNOWN);
     }
 
@@ -45,6 +56,10 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
                 '}';
     }
 
+    /**
+     * //TODO: DOC here
+     */
+
     public enum ResultType {
 
         /**
@@ -55,10 +70,12 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
         /**
          * Command and syntax successfully found.
          */
-        SUCCESS;
+        SUCCESS,
 
-        //TODO: Add more result types like parsing error or something
-
+        /**
+         *
+         */
+        SYNTAX
     }
 }
 
