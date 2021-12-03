@@ -12,6 +12,7 @@ import net.theEvilReaper.bot.api.service.ServiceRegistry;
 import net.theEvilReaper.bot.api.user.IUserService;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.UUID;
 import java.util.logging.Logger;
 
 /**
@@ -135,4 +136,11 @@ public interface IBot extends Connectable {
      */
 
     BotConfig getConfig();
+
+    /**
+     * Returns the uuid from the bot.
+     * @return the given uuid
+     */
+
+    UUID getUUID();
 }
