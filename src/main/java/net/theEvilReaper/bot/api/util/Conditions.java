@@ -6,7 +6,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Properties;
 
 /**
- *
+ * The {@link Conditions} class includes some useful method to check if an object has a given state.
+ * In this case a state is as example if an object is null or is empty and so on.
  * @author theEvilReaper
  * @version 1.0.0
  * @since 1.0.0
@@ -37,12 +38,12 @@ public class Conditions {
     }
 
     /**
-     * Checks if a given {@link TextMessageTargetMode} is for the privat channel.
+     * Checks if a given {@link TextMessageTargetMode} is for the private channel.
      * @param messageTargetMode The {@link TextMessageTargetMode} input to check
-     * @return True if the mode equals the privat channel otherwise false
+     * @return True if the mode equals the private channel otherwise false
      */
 
-    public static boolean isPrivatChannel(TextMessageTargetMode messageTargetMode) {
+    public static boolean hasPrivateChannel(TextMessageTargetMode messageTargetMode) {
         return messageTargetMode == TextMessageTargetMode.CLIENT;
     }
 }
