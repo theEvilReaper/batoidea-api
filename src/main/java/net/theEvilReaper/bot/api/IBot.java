@@ -11,16 +11,17 @@ import net.theEvilReaper.bot.api.provider.IClientProvider;
 import net.theEvilReaper.bot.api.service.ServiceRegistry;
 import net.theEvilReaper.bot.api.user.IUserService;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 import java.util.logging.Logger;
 
 /**
+ *
  * @author theEvilReaper
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public interface IBot extends Connectable {
 
     /**
@@ -43,20 +44,20 @@ public interface IBot extends Connectable {
      * Changes the current {@link BotState} to the given state.
      * @param botState The state to set
      */
-
     void setState(@NotNull BotState botState);
 
     /**
      * Returns the logger from the bot.
      * @return the underlying instance from the logger
      */
-
+    @NotNull
     Logger getLogger();
 
     /**
      * Gets the state of the bot.
      * @return the current state.
      */
+    @NotNull
     BotState getState();
 
     /**
@@ -64,83 +65,82 @@ public interface IBot extends Connectable {
      * The id would be set if the bot has successfully connected to the given server
      * @return the generated id from the bot.
      */
-
     int getBotID();
 
     /**
      * Returns the given instance from the {@link IUserService}.
      * @return the underlying service
      */
-
+    @NotNull
     IUserService getUserService();
 
     /**
      * Returns the given instance from the {@link IClientProvider}.
      * @return the underlying instance
      */
-
+    @NotNull
     IClientProvider getClientProvider();
 
     /**
      * Returns the given instance from the {@link IChannelProvider}.
      * @return the underlying instance
      */
-
+    @NotNull
     IChannelProvider getChannelProvider();
 
     /**
      * Returns the given instance from the {@link ServiceRegistry}.
      * @return the underlying instance
      */
-
+    @NotNull
     ServiceRegistry getServiceRegistry();
 
     /**
      * Returns the given instance from the {@link BotInteraction}.
      * @return the underlying instance
      */
-
+    @NotNull
     BotInteraction getBotInteraction();
 
     /**
      * Returns the given implementation of the {@link AbstractInteractionFactory}.
      * @return the given instance
      */
-
+    @NotNull
     AbstractInteractionFactory getInteractionFactory();
 
     /**
      * Returns the implementation of the event manager for the redis events.
      * @return the given instance
      */
-
+    @Nullable
     IRedisEventManager getEventManager();
 
     /**
      * Returns the implementation for the {@link PropertyEventCall}.
      * @return the given instance
      */
-
+    @NotNull
     PropertyEventCall getPropertyEventCall();
 
     /**
      * Returns the implementation from the {@link CommandManager}.
      * @return the given instance
      */
-
+    @NotNull
     CommandManager getCommandManager();
 
     /**
      * Returns the given instance to the config for the {@link IBot}
      * @return the given {@link BotConfig} instance
      */
-
+    @NotNull
     BotConfig getConfig();
 
     /**
      * Returns the uuid from the bot.
      * @return the given uuid
      */
-
+    @NotNull
     UUID getUUID();
 }
