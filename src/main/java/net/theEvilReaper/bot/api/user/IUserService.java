@@ -1,6 +1,5 @@
 package net.theEvilReaper.bot.api.user;
 
-import com.github.manevolent.ts3j.api.Client;
 import net.theEvilReaper.bot.api.service.IService;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -13,37 +12,29 @@ import java.util.Map;
  * @since 1.0.0
  * @version 1.0.0
  */
-public interface IUserService extends IService {
+public interface IUserService<T extends User> extends IService {
 
     /**
      * Add a user to the service.
-     * @param client The {@link Client} to create the user
+     * @param user The user to add
      */
-
-    void addUser(@NotNull Client client);
-
-    /**
-     * Removes a user from the service
-     * @param client The client to remove the id
-     */
-
-    default void removeUser(@NotNull Client client) {
-        removeUser(client.getDatabaseId());
-    }
+    void add(@NotNull T user);
 
     /**
      * Remove a user to the service.
-     * @param clientID The client id from the user
+     * @param user The user to remove
      */
+    default void remove(T user) {
+        this.remove(user.getID());
+    }
 
-    void removeUser(int clientID);
+    void remove(int id);
 
     /**
      * Get a user with the given id.
      * @param clientID The id form the client to determine the {@link User}
      * @return the determined client. When no client found it returns a null reference
      */
-
     @Nullable
     User getUser(int clientID);
 
@@ -51,6 +42,5 @@ public interface IUserService extends IService {
      * Get the {@link Map} with all current user.
      * @return the underlying instance
      */
-
-    Map<Integer, User> getUser();
+    Map<Integer, T> getUser();
 }
