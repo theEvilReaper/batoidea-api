@@ -12,17 +12,15 @@ import java.util.Properties;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public class Conditions {
 
     /**
      * Checks if a given string is empty.
      * @param string The string to check
      */
-
     public static void checkForEmpty(@NotNull String string) {
         if (string.trim().isEmpty()) {
-            throw new IllegalArgumentException("The message can not be empty");
+            throw new IllegalArgumentException("The given string can not be empty");
         }
     }
 
@@ -30,7 +28,6 @@ public class Conditions {
      * Checks if a given {@link Properties} file is null.
      * @param properties The file to check
      */
-
     public static void checkPropertiesState(Properties properties) {
         if (properties == null) {
             throw new IllegalStateException("The properties file is null. Can not set / get values");
@@ -42,7 +39,6 @@ public class Conditions {
      * @param messageTargetMode The {@link TextMessageTargetMode} input to check
      * @return True if the mode equals the private channel otherwise false
      */
-
     public static boolean hasPrivateChannel(TextMessageTargetMode messageTargetMode) {
         return messageTargetMode == TextMessageTargetMode.CLIENT;
     }
