@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public abstract class REvent {
 
     protected static final String EVENT_KEY = "bot:";

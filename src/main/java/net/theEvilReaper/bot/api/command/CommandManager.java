@@ -11,14 +11,12 @@ public interface CommandManager {
      * Register a {@link Command}.
      * @param command The {@link Command} to register
      */
-
     void register(@NotNull Command command);
 
     /**
      * Unregister a {@link Command}.
      * @param command The {@link Command} to unregister
      */
-
     void unregister(@NotNull Command command);
 
     /**
@@ -27,7 +25,6 @@ public interface CommandManager {
      * When the result then nothing will happen
      * @param commandName The name from the command
      */
-
     default void unregister(@NotNull String commandName) {
         Conditions.checkForEmpty(commandName);
         var command = getCommand(commandName);
@@ -40,14 +37,12 @@ public interface CommandManager {
      * @param commandName The name of the command
      * @return True when a command is registered with the name otherwise false
      */
-
     boolean hasCommand(@NotNull String commandName);
 
     /**
      * Change set current used prefix for the command
      * @param prefix The new prefix to set
      */
-
     void setCommandPrefix(@NotNull String prefix);
 
     /**
@@ -56,7 +51,6 @@ public interface CommandManager {
      * @param commandCallback the new unknown command callback,
      *                        setting it to null mean that nothing will be executed
      */
-
     void setUnknownCommandCallback(@NotNull CommandCallback commandCallback);
 
     /**
@@ -66,7 +60,6 @@ public interface CommandManager {
      * @param args The Arguments for the {@link Command} as {@link String} array
      * @return True when the command can be executed otherwise false
      */
-
     @NotNull
     CommandResult executeCommand(@NotNull CommandSender sender, @NotNull String command, @Nullable String... args);
 
@@ -74,7 +67,6 @@ public interface CommandManager {
      * Gets the callback executed once an unknown command is run.
      * @return the unknown command callback, null if not any
      */
-
     @Nullable
     CommandCallback getUnknownCommandCallback();
 
@@ -84,7 +76,6 @@ public interface CommandManager {
      * @param commandName The name from the {@link Command} as string
      * @return The fetched {@link Command} class.
      */
-
     @Nullable
     Command getCommand(@NotNull String commandName);
 
@@ -92,7 +83,6 @@ public interface CommandManager {
      * Returns the current command prefix.
      * @return the given prefix
      */
-
     @NotNull
     String getCommandPrefix();
 }

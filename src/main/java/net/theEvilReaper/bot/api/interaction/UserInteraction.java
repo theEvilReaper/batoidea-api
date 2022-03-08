@@ -19,7 +19,6 @@ public interface UserInteraction extends Interaction {
      * @param client The client who receives the message
      * @param message The message to send
      */
-
     void sendPrivateMessage(@NotNull Client client, @NotNull String message);
 
     void pokeClient(int clientID, @NotNull String message);

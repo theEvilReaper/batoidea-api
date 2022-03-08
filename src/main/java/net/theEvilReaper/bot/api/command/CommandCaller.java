@@ -12,21 +12,18 @@ import java.util.Set;
  * @version 1.0.0
  * @since 1.0.0
  */
-
 public interface CommandCaller {
 
     /**
      * Register a new {@link Command} into the underlying data structure.
      * @param command The {@link Command} to register
      */
-
     void register(@NotNull Command command);
 
     /**
      * Unregister a given {@link Command} from the underlying structure
      * @param command The {@link Command} to unregister
      */
-
     void unregister(@NotNull Command command);
 
     /**
@@ -34,7 +31,6 @@ public interface CommandCaller {
      * The execution will be stopped if there is no command for the name
      * @param command The command name as string
      */
-
     default void unregister(@NotNull String command) {
         Conditions.checkForEmpty(command);
 
@@ -52,7 +48,6 @@ public interface CommandCaller {
      * @param args The arguments for the command (Can be null).
      * @return The {@link CommandResult} from the execution
      */
-
     CommandResult executeCommand(@NotNull CommandSender sender, @NotNull String command, @Nullable String... args);
 
     /**
@@ -61,7 +56,6 @@ public interface CommandCaller {
      * @param commandName The name of the command
      * @return the determined {@link Command}
      */
-
     @Nullable
     Command getCommand(@NotNull String commandName);
 
@@ -69,7 +63,6 @@ public interface CommandCaller {
      * Returns a {@link Set} which contains all current registered commands.
      * @return The {@link Set} which contains the commands
      */
-
     @NotNull
     Set<Command> getCommands();
 }

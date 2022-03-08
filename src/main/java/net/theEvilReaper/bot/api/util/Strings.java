@@ -9,19 +9,16 @@ import java.util.regex.Pattern;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public class Strings {
 
     /**
      * Global constant for an empty array.
      */
-
     public static final String[] EMPTY_ARRAY = new String[0];
 
     /**
      * Global constant for a string that contains only a space.
      */
-
     public static final String SPACE = " ";
 
     public static final Pattern SPACE_PATTERN = Pattern.compile(SPACE);
@@ -37,7 +34,6 @@ public class Strings {
      * @param domain The string to check
      * @return True when the string is a valid domain otherwise false
      */
-
     public static boolean isDomain(@NotNull String domain) {
         var matches = DOMAIN_PATTERN.matcher(domain);
         return matches.matches();
@@ -49,7 +45,6 @@ public class Strings {
      * @param address The address to check
      * @return True when the ip is valid otherwise false
      */
-
     public static boolean isIpV4Address(@NotNull String address) {
         return IPV4_PATTERN.matcher(address).matches();
     }

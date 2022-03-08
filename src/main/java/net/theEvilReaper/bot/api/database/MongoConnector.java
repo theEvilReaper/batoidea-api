@@ -11,14 +11,12 @@ import org.jetbrains.annotations.NotNull;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public interface MongoConnector extends Connectable {
 
     /**
      * Returns the given connection from the MongoDB
      * @return the underlying instance to the {@link MongoClient}
      */
-
     @NotNull
     MongoClient getConnection();
 }

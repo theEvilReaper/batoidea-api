@@ -2,7 +2,7 @@ package net.theEvilReaper.bot.api.event;
 
 import org.jetbrains.annotations.NotNull;
 
-public sealed class BotEventDispatcher extends {
+public class BotEventDispatcher {
 
     public static void callEvent(@NotNull Event event) {
 

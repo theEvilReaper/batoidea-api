@@ -9,7 +9,6 @@ import org.jetbrains.annotations.Nullable;
  * @since 1.0.0
  * @version 1.0.0
  */
-
 public interface IConfig {
 
     /**
@@ -17,7 +16,6 @@ public interface IConfig {
      * @param key The name of the key
      * @param value The value to set
      */
-
     void setString(@NotNull String key, @NotNull String value);
 
     /**
@@ -25,7 +23,6 @@ public interface IConfig {
      * @param key The name of the key
      * @param value The value to set
      */
-
     void setInt(@NotNull String key, int value);
 
     /**
@@ -33,7 +30,6 @@ public interface IConfig {
      * @param key The name of the key
      * @param value The value to set
      */
-
     void setDouble(@NotNull String key, double value);
 
     /**
@@ -41,7 +37,6 @@ public interface IConfig {
      * @param key The name of the key
      * @param value The value to set
      */
-
     void setLong(@NotNull String key, long value);
 
     /**
@@ -49,7 +44,6 @@ public interface IConfig {
      * @param key The name of the key
      * @param values The array to set
      */
-
     void setStringArray(@NotNull String key, String... values);
 
     /**
@@ -57,7 +51,6 @@ public interface IConfig {
      * @param key The key to determine the string.
      * @return the fetched string
      */
-
     @Nullable
     String getString(@NotNull String key);
 
@@ -66,7 +59,6 @@ public interface IConfig {
      * @param key The key to determine the string.
      * @return the fetched int
      */
-
     int getInt(@NotNull String key);
 
     /**
@@ -74,7 +66,6 @@ public interface IConfig {
      * @param key The key to determine the string.
      * @return the fetched double
      */
-
     double getDouble(@NotNull String key);
 
     /**
@@ -82,7 +73,6 @@ public interface IConfig {
      * @param key The key to determine the string.
      * @return the fetched double
      */
-
     long getLong(@NotNull String key);
 
     /**
@@ -90,6 +80,5 @@ public interface IConfig {
      * @param key The key to determine the array
      * @return the fetched array
      */
-
     String[] getArray(@NotNull String key);
 }

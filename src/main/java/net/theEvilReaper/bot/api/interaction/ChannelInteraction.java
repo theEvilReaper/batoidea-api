@@ -9,7 +9,6 @@ import org.jetbrains.annotations.Nullable;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public interface ChannelInteraction extends Interaction {
 
     default void joinChannel(int channelID) {

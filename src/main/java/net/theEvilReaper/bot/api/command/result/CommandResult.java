@@ -14,7 +14,6 @@ import java.util.Arrays;
  * @since 1.0.0
  * @version 1.0.0
  */
-
 public record CommandResult(@NotNull String input, @Nullable Command command, @NotNull CommandResult.ResultType type, @Nullable String... args) {
 
     /**
@@ -24,7 +23,6 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
      * @param type The {@link ResultType} for
      * @return the created {@link CommandResult}
      */
-
     public static CommandResult of(@NotNull String input, @NotNull Command command, @NotNull CommandResult.ResultType type, @Nullable String... args) {
         Conditions.checkForEmpty(input);
         return new CommandResult(input, command, type, args);
@@ -35,7 +33,6 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
      * @param input The current input from the user / console
      * @return the created {@link CommandResult}
      */
-
     public static CommandResult ofUnknown(@NotNull String input) {
         Conditions.checkForEmpty(input);
         return new CommandResult(input, null, ResultType.UNKNOWN);
@@ -45,7 +42,6 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
      * Overrides the implementation of toString().
      * @return A string which represents the class with all given values
      */
-
     @Override
     public String toString() {
         return "CommandResult{" +
@@ -59,7 +55,6 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
     /**
      * //TODO: DOC here
      */
-
     public enum ResultType {
 
         /**

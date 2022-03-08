@@ -5,7 +5,6 @@ package net.theEvilReaper.bot.api.interaction;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public enum InteractionType {
 
     CLIENT((byte)0),
@@ -27,7 +26,6 @@ public enum InteractionType {
      * Returns the id from the {@link InteractionType}.
      * @return  the given id
      */
-
     public int getId() {
         return id;
     }

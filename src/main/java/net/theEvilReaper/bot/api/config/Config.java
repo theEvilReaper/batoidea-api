@@ -14,7 +14,6 @@ import java.util.regex.Pattern;
  * @since 1.0.0
  * @version 1.0.0
  */
-
 public abstract class Config implements IConfig {
 
     protected static final Pattern SPLIT_PATTERN = Pattern.compile(",");
@@ -24,19 +23,16 @@ public abstract class Config implements IConfig {
     /**
      * Loads the {@link Properties}.
      */
-
     public abstract void load();
 
     /**
      * Saves the {@link Properties}.
      */
-
     public abstract void save();
 
     /**
      * Creates the default config.
      */
-
     protected abstract void generateDefaultConfig();
 
     /**
@@ -44,7 +40,6 @@ public abstract class Config implements IConfig {
      * @param key The name of the key
      * @param value The value to set
      */
-
     @Override
     public void setString(@NotNull String key, @NotNull String value) {
         Conditions.checkPropertiesState(properties);
@@ -57,7 +52,6 @@ public abstract class Config implements IConfig {
      * @param key The name of the key
      * @param value The value to set
      */
-
     @Override
     public void setInt(@NotNull String key, int value) {
         Conditions.checkPropertiesState(properties);
@@ -70,7 +64,6 @@ public abstract class Config implements IConfig {
      * @param key The name of the key
      * @param value The value to set
      */
-
     @Override
     public void setDouble(@NotNull String key, double value) {
         Conditions.checkPropertiesState(properties);
@@ -83,7 +76,6 @@ public abstract class Config implements IConfig {
      * @param key The name of the key
      * @param value The value to set
      */
-
     @Override
     public void setLong(@NotNull String key, long value) {
         Conditions.checkPropertiesState(properties);
@@ -96,7 +88,6 @@ public abstract class Config implements IConfig {
      * @param key The name of the key
      * @param values The array to set
      */
-
     @Override
     public void setStringArray(@NotNull String key, String... values) {
         Conditions.checkPropertiesState(properties);
@@ -126,7 +117,6 @@ public abstract class Config implements IConfig {
      * @param key The key to determine the string
      * @return the fetched string
      */
-
     @Override
     @Nullable
     public String getString(@NotNull String key) {
@@ -140,7 +130,6 @@ public abstract class Config implements IConfig {
      * @param key The key to determine the string
      * @return the fetched int
      */
-
     @Override
     public int getInt(@NotNull String key) {
         Conditions.checkPropertiesState(properties);
@@ -153,7 +142,6 @@ public abstract class Config implements IConfig {
      * @param key The key to determine the string
      * @return the fetched double
      */
-
     @Override
     public double getDouble(@NotNull String key) {
         Conditions.checkPropertiesState(properties);
@@ -166,7 +154,6 @@ public abstract class Config implements IConfig {
      * @param key The key to determine the string
      * @return the fetched double
      */
-
     @Override
     public long getLong(@NotNull String key) {
         Conditions.checkPropertiesState(properties);
@@ -179,7 +166,6 @@ public abstract class Config implements IConfig {
      * @param key The key to determine the array
      * @return the fetched array
      */
-
     @Override
     public String[] getArray(@NotNull String key) {
         var arrayAsString = getString(key);

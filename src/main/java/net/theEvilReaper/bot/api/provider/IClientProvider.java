@@ -10,7 +10,6 @@ import java.util.Map;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 //TODO: Rethink...
 public interface IClientProvider {
 

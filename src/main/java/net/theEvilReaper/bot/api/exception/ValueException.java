@@ -6,7 +6,6 @@ package net.theEvilReaper.bot.api.exception;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public class ValueException extends Exception {
 
     private final String object;
@@ -16,7 +15,6 @@ public class ValueException extends Exception {
      * @param object The object that is involved
      * @param message The message for the exception
      */
-
     public ValueException(String object, String message) {
         super(message);
         this.object = object;
@@ -26,7 +24,6 @@ public class ValueException extends Exception {
      * Returns the object that is involved in the exception.
      * @return the involved object
      */
-
     public String getObject() {
         return object;
     }

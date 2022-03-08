@@ -5,12 +5,11 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * The enum contains some commands from teamspeak with its own sub arguments.
- * They can be used with the {@link TeamSpeakCommandBuilder} to build a {@link com.github.manevolent.ts3j.command.Command}
+ * They can to build a {@link com.github.manevolent.ts3j.command.Command}
  * @author theEvilReaper
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public enum TeamSpeakCommand {
 
     EDIT_CHANNEL("channeledit", "cid", "channel_name");

@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public class RTReamSpeakVerifyEvent extends REvent {
 
     private long clientID;
@@ -17,14 +16,12 @@ public class RTReamSpeakVerifyEvent extends REvent {
     /**
      * Empty constructor for the event structure.
      */
-
     public RTReamSpeakVerifyEvent() { }
 
     /**
      * Creates a new instance from the {@link RTReamSpeakVerifyEvent}.
      * @param clientID The client id from the teamspeak client
      */
-
     public RTReamSpeakVerifyEvent(long clientID) {
         this.clientID = clientID;
     }
@@ -34,7 +31,6 @@ public class RTReamSpeakVerifyEvent extends REvent {
      * Note: The database ID is the teamspeak client id.
      * @return The client database id
      */
-
     public long getClientID() {
         return clientID;
     }
@@ -43,7 +39,6 @@ public class RTReamSpeakVerifyEvent extends REvent {
      * Returns the topic from the {@link RRankChangeEvent}.
      * @return the given topic as {@link String}
      */
-
     @Override
     @NotNull
     public String getTopic() {

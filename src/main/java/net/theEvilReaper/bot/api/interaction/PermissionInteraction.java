@@ -8,7 +8,6 @@ import org.jetbrains.annotations.Nullable;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 //TODO: Add method for the permission handling with the channel or own class?
 public interface PermissionInteraction extends Interaction {
 
@@ -17,7 +16,6 @@ public interface PermissionInteraction extends Interaction {
      * @param clientDatabaseID The client id from the {@link com.github.manevolent.ts3j.api.Client}
      * @param permissions The permission(s) to add
      */
-
     void addPermission(int clientDatabaseID, @Nullable Permission... permissions);
 
     /**
@@ -25,7 +23,5 @@ public interface PermissionInteraction extends Interaction {
      * @param clientDatabaseID The client id from the {@link com.github.manevolent.ts3j.api.Client}
      * @param permissions The permission(s) to add
      */
-
     void removePermission(int clientDatabaseID, @Nullable Permission... permissions);
-
 }

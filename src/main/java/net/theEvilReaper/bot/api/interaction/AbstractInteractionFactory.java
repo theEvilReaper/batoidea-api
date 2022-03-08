@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public abstract class AbstractInteractionFactory {
 
     /**
@@ -19,6 +18,5 @@ public abstract class AbstractInteractionFactory {
      * @param <T> The value must extend from the {@link Interaction}.
      * @return The determined {@link Interaction} implementation.
      */
-
     public abstract <T extends Interaction> T getInteraction(@NotNull InteractionType type, Class<T> clazzType);
 }

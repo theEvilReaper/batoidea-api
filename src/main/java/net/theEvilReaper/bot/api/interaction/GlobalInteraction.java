@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
  * @version 1.0.0
  * @since
  **/
-
 public interface GlobalInteraction extends Interaction {
 
     void broadcast(@NotNull String message);

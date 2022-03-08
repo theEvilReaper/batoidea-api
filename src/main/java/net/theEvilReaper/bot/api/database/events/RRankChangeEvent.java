@@ -11,7 +11,6 @@ import java.util.UUID;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public class RRankChangeEvent extends REvent {
 
     private UUID uuid;
@@ -21,7 +20,6 @@ public class RRankChangeEvent extends REvent {
     /**
      * Empty constructor for the event structure.
      */
-
     public RRankChangeEvent() { }
 
     /**
@@ -30,7 +28,6 @@ public class RRankChangeEvent extends REvent {
      * @param oldRank The old rank as integer
      * @param newRank The new rank as integer
      */
-
     public RRankChangeEvent(UUID uuid, int oldRank, int newRank) {
         this.uuid = uuid;
         this.oldRank = oldRank;
@@ -41,7 +38,6 @@ public class RRankChangeEvent extends REvent {
      * Returns the uuid which gains the new rank.
      * @return the underlying uuid
      */
-
     public UUID getUuid() {
         return uuid;
     }
@@ -50,7 +46,6 @@ public class RRankChangeEvent extends REvent {
      * Returns the new rank from the entity.
      * @return the new rank as integer
      */
-
     public int getNewRank() {
         return newRank;
     }
@@ -59,7 +54,6 @@ public class RRankChangeEvent extends REvent {
      * Returns the old rank from the entity.
      * @return the old rank as integer
      */
-
     public int getOldRank() {
         return oldRank;
     }
@@ -68,7 +62,6 @@ public class RRankChangeEvent extends REvent {
      * Returns the topic from the {@link RRankChangeEvent}.
      * @return the given topic as {@link String}
      */
-
     @Override
     @NotNull
     public String getTopic() {

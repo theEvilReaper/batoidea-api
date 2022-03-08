@@ -11,7 +11,6 @@ import java.util.Map;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public interface IChannelProvider {
 
     void add(@NotNull Channel channel);
@@ -28,7 +27,6 @@ public interface IChannelProvider {
      * @param channel The channel to check
      * @return The given channel from the parameter list
      */
-
     @Deprecated
     Channel recognizeChannel(@NotNull Channel channel);
 
@@ -37,7 +35,6 @@ public interface IChannelProvider {
      * @param channelId the id from the channel
      * @return The fetched channel. It can be null
      */
-
     @Nullable
     Channel getChannelById(int channelId);
 
@@ -45,6 +42,5 @@ public interface IChannelProvider {
      * Returns the underlying map which contains all {@link Channel}.
      * @return the underlying map
      */
-
     Map<Integer, Channel> getChannels();
 }

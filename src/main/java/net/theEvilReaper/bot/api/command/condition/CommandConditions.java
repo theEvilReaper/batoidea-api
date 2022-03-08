@@ -23,7 +23,7 @@ public class CommandConditions {
      * @param message The message to send
      * @return True when the {@link CommandSender} is a user otherwise false
      */
-    public static boolean isUser(@NotNull CommandSender sender, @Nullable String message) {
+    public static boolean forUser(@NotNull CommandSender sender, @Nullable String message) {
         if (!(sender instanceof User)) {
             sender.sendMessage(message == null ? ONLY_FOR_USER : message);
             return false;

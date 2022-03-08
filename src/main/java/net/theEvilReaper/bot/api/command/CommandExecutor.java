@@ -9,7 +9,6 @@ import org.jetbrains.annotations.Nullable;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public interface CommandExecutor {
 
     /**
@@ -19,6 +18,5 @@ public interface CommandExecutor {
      * @param command The name of the command
      * @param args Arguments from the command
      */
-
     void apply(@NotNull CommandSender sender, @NotNull String command, @Nullable String... args);
 }

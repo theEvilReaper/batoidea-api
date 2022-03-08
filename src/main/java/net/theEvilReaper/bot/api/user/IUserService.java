@@ -19,14 +19,12 @@ public interface IUserService extends IService {
      * Add a user to the service.
      * @param client The {@link Client} to create the user
      */
-
     void addUser(@NotNull Client client);
 
     /**
      * Removes a user from the service
      * @param client The client to remove the id
      */
-
     default void removeUser(@NotNull Client client) {
         removeUser(client.getDatabaseId());
     }
@@ -35,7 +33,6 @@ public interface IUserService extends IService {
      * Remove a user to the service.
      * @param clientID The client id from the user
      */
-
     void removeUser(int clientID);
 
     /**
@@ -43,7 +40,6 @@ public interface IUserService extends IService {
      * @param clientID The id form the client to determine the {@link User}
      * @return the determined client. When no client found it returns a null reference
      */
-
     @Nullable
     User getUser(int clientID);
 
@@ -51,6 +47,5 @@ public interface IUserService extends IService {
      * Get the {@link Map} with all current user.
      * @return the underlying instance
      */
-
     Map<Integer, User> getUser();
 }

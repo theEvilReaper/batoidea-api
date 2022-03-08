@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
  * @version 1.0.0
  * @since 1.0.0
  */
-
 @FunctionalInterface
 public interface CommandCallback {
 
@@ -19,6 +18,5 @@ public interface CommandCallback {
      * @param commandSender The {@link CommandSender} who executed the command
      * @param command The command as string
      */
-
     void apply(@NotNull CommandSender commandSender, @NotNull String command);
 }

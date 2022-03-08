@@ -11,14 +11,12 @@ import org.redisson.api.RedissonClient;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public interface RedisConnector extends Connectable {
 
     /**
      * Returns the valid instance to an {@link RedissonClient} instance.
      * @return the underlying instance
      */
-
     @NotNull
     RedissonClient getConnection();
 }

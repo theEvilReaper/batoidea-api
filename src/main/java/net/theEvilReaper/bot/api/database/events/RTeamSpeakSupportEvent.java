@@ -9,14 +9,12 @@ import org.jetbrains.annotations.NotNull;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public class RTeamSpeakSupportEvent extends REvent {
 
     /**
      * Returns the topic from the {@link RRankChangeEvent}.
      * @return the given topic as {@link String}
      */
-
     @Override
     @NotNull
     public String getTopic() {

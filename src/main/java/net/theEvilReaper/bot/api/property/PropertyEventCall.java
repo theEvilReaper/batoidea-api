@@ -14,14 +14,12 @@ import java.beans.PropertyChangeListener;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public interface PropertyEventCall {
 
     /**
      * Add a {@link PropertyChangeListener} to the instance.
      * @param listener The listener to add
      */
-
     void addListener(@NotNull PropertyChangeListener listener);
 
     /**
@@ -29,14 +27,12 @@ public interface PropertyEventCall {
      * @param source The source where the listener should be register
      * @param listener The listener to register
      */
-
     void addListener(@NotNull String source, @NotNull PropertyChangeListener listener);
 
     /**
      * Removes a {@link PropertyChangeListener}.
      * @param listener The listner to remove
      */
-
     void removeListener(@NotNull PropertyChangeListener listener);
 
     /**
@@ -45,7 +41,6 @@ public interface PropertyEventCall {
      * @param oldSource The old object
      * @param newSource The new object
      */
-
     void call(@NotNull Object oldSource, @NotNull Object newSource);
 
     /**
@@ -54,14 +49,12 @@ public interface PropertyEventCall {
      * @param oldSource The old object
      * @param newSource The new object
      */
-
     void call(@NotNull String propertyName, @NotNull Object oldSource, @NotNull Object newSource);
 
     /**
      * Call a new instance of an {@link PropertyChangeEvent}.
      * @param event The event to call
      */
-
     void call(@NotNull PropertyChangeEvent event);
 
     /**
@@ -69,15 +62,13 @@ public interface PropertyEventCall {
      * @param source The source to check if the source has listener
      * @return True when the source has some {@link PropertyChangeListener} otherwise false
      */
-
     boolean hasListener(@NotNull String source);
 
     /**
      * Get all listener for a given source.
      * @param source The source to determine the listeners
-     * @return All listeners that matches with the specified source.
+     * @return All listeners that match with the specified source.
      */
-
     @Nullable
     PropertyChangeListener[] getListeners(@NotNull String source);
 
@@ -85,6 +76,5 @@ public interface PropertyEventCall {
      * Get all current registered {@link PropertyChangeListener}.
      * @return all registered listener
      */
-
     PropertyChangeListener[] getListeners();
 }

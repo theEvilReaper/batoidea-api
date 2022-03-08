@@ -14,7 +14,6 @@ import org.redisson.api.RSet;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public interface RedisProcessor<K, V extends RedisModel> {
 
     /**
@@ -22,14 +21,12 @@ public interface RedisProcessor<K, V extends RedisModel> {
      * @param key The key to determine the right value
      * @return The fetched {@link RMap}
      */
-
     RMap<K, V> getMap(String key);
 
     /**
      * Returns all {@link RKeys} from the given context.
      * @return the fetched {@link RKeys}.
      */
-
     RKeys getKeys();
 
     /**
@@ -37,7 +34,6 @@ public interface RedisProcessor<K, V extends RedisModel> {
      * @param key The key to determine the right value
      * @return The fetched {@link RList}
      */
-
     RList<V> getList(String key);
 
     /**
@@ -45,7 +41,6 @@ public interface RedisProcessor<K, V extends RedisModel> {
      * @param key The key to determine the right value
      * @return The fetched {@link RSet}
      */
-
     RSet<V> getSet(String key);
 
     /**
@@ -53,7 +48,6 @@ public interface RedisProcessor<K, V extends RedisModel> {
      * @param key The key to determine the right value
      * @return The fetched value
      */
-
     RQueue<V> getQueue(String key);
 
     /**
@@ -61,7 +55,6 @@ public interface RedisProcessor<K, V extends RedisModel> {
      * @param key The key to determine the right value
      * @return The fetched value
      */
-
     RBlockingQueue<V> getBlockingQueue(String key);
 
     /**
@@ -69,6 +62,5 @@ public interface RedisProcessor<K, V extends RedisModel> {
      * @param key The key to determine the right value
      * @return The fetched value
      */
-
     RBucket<V> getBucket(String key);
 }

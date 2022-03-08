@@ -11,7 +11,6 @@ import static net.theEvilReaper.bot.api.util.Strings.*;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public interface CommandParser {
 
     /**
@@ -20,7 +19,6 @@ public interface CommandParser {
      * @param sender The instance from a {@link CommandSender}
      * @param input The input from the user or console line
      */
-
     default void parse(@NotNull CommandManager commandManager, @NotNull CommandSender sender, @NotNull String input) {
         var split = SPACE_PATTERN.split(input);
         String command = split[0];
