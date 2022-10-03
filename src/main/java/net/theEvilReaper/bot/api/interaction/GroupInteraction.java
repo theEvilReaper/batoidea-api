@@ -16,7 +16,7 @@ public interface GroupInteraction extends Interaction {
 
     void removeServerGroup(@NotNull Client client, int groupId);
 
-    @Deprecated
+    @Deprecated(forRemoval = true)
     default boolean hasGroup(@NotNull Client client, int groupId) {
         boolean isIn = false;
 
@@ -29,7 +29,7 @@ public interface GroupInteraction extends Interaction {
         return isIn;
     }
 
-    @Deprecated
+    @Deprecated(forRemoval = true)
     default boolean hasGroup(@NotNull User user, int groupID) {
         var groups = user.getGroups();
 
