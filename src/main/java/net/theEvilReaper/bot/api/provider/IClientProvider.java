@@ -24,7 +24,7 @@ public interface IClientProvider {
 
     int getSize();
 
-    @Deprecated
+    @Deprecated(forRemoval = true)
     Client recognizeClient(@NotNull Client client);
 
     Client getClientById(int clientId);
