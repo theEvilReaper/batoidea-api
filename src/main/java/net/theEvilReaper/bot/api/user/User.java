@@ -1,7 +1,7 @@
-package net.theEvilReaper.bot.api.user;
+package net.theevilreaper.bot.api.user;
 
 import com.github.manevolent.ts3j.api.Client;
-import net.theEvilReaper.bot.api.command.CommandSender;
+import net.theevilreaper.bot.api.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;

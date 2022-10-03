@@ -1,7 +1,7 @@
-package net.theEvilReaper.bot.api.interaction;
+package net.theevilreaper.bot.api.interaction;
 
 import com.github.manevolent.ts3j.api.Client;
-import net.theEvilReaper.bot.api.user.User;
+import net.theevilreaper.bot.api.user.User;
 import org.jetbrains.annotations.NotNull;
 
 /**

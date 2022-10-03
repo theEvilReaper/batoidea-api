@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.util;
+package net.theevilreaper.bot.api.util;
 
 import com.github.manevolent.ts3j.api.TextMessageTargetMode;
 import org.jetbrains.annotations.NotNull;

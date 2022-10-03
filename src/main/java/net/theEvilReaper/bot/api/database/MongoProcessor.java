@@ -1,7 +1,7 @@
-package net.theEvilReaper.bot.api.database;
+package net.theevilreaper.bot.api.database;
 
 import dev.morphia.Datastore;
-import net.theEvilReaper.bot.api.database.model.MongoModel;
+import net.theevilreaper.bot.api.database.model.MongoModel;
 import org.bson.BsonDocument;
 
 /**

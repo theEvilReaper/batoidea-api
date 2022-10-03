@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.util;
+package net.theevilreaper.bot.api.util;
 
 import org.junit.jupiter.api.Test;
 

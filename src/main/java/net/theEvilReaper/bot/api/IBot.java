@@ -1,15 +1,15 @@
-package net.theEvilReaper.bot.api;
+package net.theevilreaper.bot.api;
 
-import net.theEvilReaper.bot.api.command.CommandManager;
-import net.theEvilReaper.bot.api.config.BotConfig;
-import net.theEvilReaper.bot.api.database.IRedisEventManager;
-import net.theEvilReaper.bot.api.interaction.AbstractInteractionFactory;
-import net.theEvilReaper.bot.api.interaction.BotInteraction;
-import net.theEvilReaper.bot.api.property.PropertyEventCall;
-import net.theEvilReaper.bot.api.provider.IChannelProvider;
-import net.theEvilReaper.bot.api.provider.IClientProvider;
-import net.theEvilReaper.bot.api.service.ServiceRegistry;
-import net.theEvilReaper.bot.api.user.IUserService;
+import net.theevilreaper.bot.api.command.CommandManager;
+import net.theevilreaper.bot.api.config.BotConfig;
+import net.theevilreaper.bot.api.database.IRedisEventManager;
+import net.theevilreaper.bot.api.interaction.AbstractInteractionFactory;
+import net.theevilreaper.bot.api.interaction.BotInteraction;
+import net.theevilreaper.bot.api.property.PropertyEventCall;
+import net.theevilreaper.bot.api.provider.IChannelProvider;
+import net.theevilreaper.bot.api.provider.IClientProvider;
+import net.theevilreaper.bot.api.service.ServiceRegistry;
+import net.theevilreaper.bot.api.user.IUserService;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

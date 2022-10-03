@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api;
+package net.theevilreaper.bot.api;
 
 /**
  * The interface defines an object which can connect to a server / service.

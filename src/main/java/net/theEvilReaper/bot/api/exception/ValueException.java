@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.exception;
+package net.theevilreaper.bot.api.exception;
 
 /**
  * The exception is used when there is a value in the context that is not allowed.

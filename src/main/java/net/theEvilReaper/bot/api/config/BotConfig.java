@@ -1,5 +1,6 @@
-package net.theEvilReaper.bot.api.config;
+package net.theevilreaper.bot.api.config;
 
+import net.theevilreaper.bot.api.util.Constants;
 import org.jetbrains.annotations.NotNull;
 
 /**

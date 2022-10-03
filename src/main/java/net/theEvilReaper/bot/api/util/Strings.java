@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.util;
+package net.theevilreaper.bot.api.util;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  * @version 1.0.0
  * @since 1.0.0
  **/
-public class Strings {
+public final class Strings {
 
     /**
      * Global constant for an empty array.
@@ -29,6 +29,8 @@ public class Strings {
 
     private static final Pattern IPV4_PATTERN =
             Pattern.compile("^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(\\.(?!$)|$)){4}$");
+
+    private Strings() {}
 
     /**
      * Checks if a given string is a valid domain.

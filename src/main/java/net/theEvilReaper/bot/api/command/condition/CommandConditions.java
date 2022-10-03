@@ -1,8 +1,8 @@
-package net.theEvilReaper.bot.api.command.condition;
+package net.theevilreaper.bot.api.command.condition;
 
-import net.theEvilReaper.bot.api.command.CommandSender;
-import net.theEvilReaper.bot.api.command.ConsoleSender;
-import net.theEvilReaper.bot.api.user.User;
+import net.theevilreaper.bot.api.command.CommandSender;
+import net.theevilreaper.bot.api.command.ConsoleSender;
+import net.theevilreaper.bot.api.user.User;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

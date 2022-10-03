@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.command;
+package net.theevilreaper.bot.api.command;
 
 /**
  * @author theEvilReaper

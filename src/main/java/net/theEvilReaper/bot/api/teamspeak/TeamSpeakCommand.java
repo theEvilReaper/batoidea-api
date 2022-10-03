@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.teamspeak;
+package net.theevilreaper.bot.api.teamspeak;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

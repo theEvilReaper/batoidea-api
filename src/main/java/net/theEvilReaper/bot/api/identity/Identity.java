@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.identity;
+package net.theevilreaper.bot.api.identity;
 
 import com.github.manevolent.ts3j.identity.LocalIdentity;
 import org.jetbrains.annotations.NotNull;

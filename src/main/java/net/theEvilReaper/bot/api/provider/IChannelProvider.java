@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.provider;
+package net.theevilreaper.bot.api.provider;
 
 import com.github.manevolent.ts3j.api.Channel;
 import org.jetbrains.annotations.NotNull;

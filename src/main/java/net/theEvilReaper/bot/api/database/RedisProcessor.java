@@ -1,6 +1,6 @@
-package net.theEvilReaper.bot.api.database;
+package net.theevilreaper.bot.api.database;
 
-import net.theEvilReaper.bot.api.database.model.RedisModel;
+import net.theevilreaper.bot.api.database.model.RedisModel;
 import org.redisson.api.RBlockingQueue;
 import org.redisson.api.RBucket;
 import org.redisson.api.RKeys;
@@ -14,7 +14,6 @@ import org.redisson.api.RSet;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 public interface RedisProcessor<K, V extends RedisModel> {
 
     /**
@@ -22,14 +21,12 @@ public interface RedisProcessor<K, V extends RedisModel> {
      * @param key The key to determine the right value
      * @return The fetched {@link RMap}
      */
-
     RMap<K, V> getMap(String key);
 
     /**
      * Returns all {@link RKeys} from the given context.
      * @return the fetched {@link RKeys}.
      */
-
     RKeys getKeys();
 
     /**

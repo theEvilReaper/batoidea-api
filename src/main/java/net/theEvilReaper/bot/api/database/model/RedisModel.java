@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.database.model;
+package net.theevilreaper.bot.api.database.model;
 
 /**
  * @author theEvilReaper

@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.interaction;
+package net.theevilreaper.bot.api.interaction;
 
 import org.jetbrains.annotations.NotNull;
 

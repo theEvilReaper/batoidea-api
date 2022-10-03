@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.service;
+package net.theevilreaper.bot.api.service;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
