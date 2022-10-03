@@ -184,7 +184,7 @@ public interface BotConfig extends IConfig {
         var groups = this.getArray("blockedGroups");
 
         if (groups.length == 0) {
-            return null;
+            return Constants.EMPTY_INT_ARRAY;
         }
 
         var mappedGroup = new int[groups.length];
