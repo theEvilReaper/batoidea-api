@@ -9,7 +9,6 @@ import org.jetbrains.annotations.Nullable;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
 @FunctionalInterface
 public interface CommandCondition {
 
@@ -20,6 +19,5 @@ public interface CommandCondition {
      * @param command The command as string
      * @return True if the sender can use the command otherwise false
      */
-
     boolean canUse(@NotNull CommandSender sender, @Nullable String command);
 }
