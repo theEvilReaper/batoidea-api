@@ -11,11 +11,12 @@ import org.jetbrains.annotations.Nullable;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
-public class CommandConditions {
+public final class CommandConditions {
 
     private static final String ONLY_FOR_USER = "The command is only for users";
     private static final String ONLY_FOR_CONSOLE = "The command is only for the console";
+
+    private CommandConditions() {}
 
     /**
      * Checks if the {@link CommandSender} is a user.
