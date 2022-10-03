@@ -1,5 +1,6 @@
 package net.theevilreaper.bot.api.service;
 
+import net.theevilreaper.bot.api.exception.ThreadInterruptedException;
 import org.jetbrains.annotations.NotNull;
 
 import java.beans.PropertyChangeEvent;
@@ -19,19 +20,15 @@ import java.util.logging.Logger;
 public abstract class Service implements Runnable, IService, PropertyChangeListener {
 
     protected final PropertyChangeSupport botStateChange;
-
     private final String name;
     private final long interval;
-
     protected final Object lock;
-
     private Logger logger;
     private boolean ready;
-
     protected boolean running;
     protected boolean stopping;
 
-    public Service(PropertyChangeSupport botStateChange, String name, long interval) {
+    protected Service(PropertyChangeSupport botStateChange, String name, long interval) {
         this.botStateChange = botStateChange;
         this.name = name;
         this.interval = interval;
@@ -72,9 +69,8 @@ public abstract class Service implements Runnable, IService, PropertyChangeListe
 
             try {
                 update();
-            }catch(Exception | NoSuchMethodError e) {
-                logger.log(Level.SEVERE, "An error occurred whilst calling the update function, terminating service...", e);
-                break;
+            } catch(Exception | NoSuchMethodError exception) {
+                logger.log(Level.SEVERE, "An error occurred whilst calling the update function, terminating service...", exception);
             }
 
             if (stopping || Thread.interrupted()) {
@@ -84,8 +80,9 @@ public abstract class Service implements Runnable, IService, PropertyChangeListe
             synchronized (lock) {
                 try {
                     lock.wait(Math.max(10, interval - (System.currentTimeMillis() - now)));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                } catch (InterruptedException exception) {
+                    Thread.currentThread().interrupt();
+                    throw new ThreadInterruptedException(exception);
                 }
             }
         }
