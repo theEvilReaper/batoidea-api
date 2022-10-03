@@ -10,6 +10,7 @@ import net.theevilreaper.bot.api.provider.IChannelProvider;
 import net.theevilreaper.bot.api.provider.IClientProvider;
 import net.theevilreaper.bot.api.service.ServiceRegistry;
 import net.theevilreaper.bot.api.user.IUserService;
+import net.theevilreaper.bot.api.user.User;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -72,7 +73,7 @@ public interface IBot extends Connectable {
      * @return the underlying service
      */
     @NotNull
-    IUserService getUserService();
+    IUserService<User> getUserService();
 
     /**
      * Returns the given instance from the {@link IClientProvider}.
