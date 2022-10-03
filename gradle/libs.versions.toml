@@ -1,0 +1,37 @@
+metadata.format.version = "1.1"
+
+[versions]
+# Plugins
+shadow = "7.1.2"
+# Testing
+junit = "5.9.0"
+mockito = "4.7.0"
+guava = "31.1-jre"
+annotations = "23.0.0"
+
+morphiaCore = "2.2.9"
+mongoDB = "4.7.1"
+
+redisson = "3.17.6"
+ts3j = "1.0.2"
+
+
+[libraries]
+guava = { group = "com.google.guava", name = "guava", version.ref = "guava" }
+annotations = { group = "org.jetbrains", name = "annotations", version.ref = "annotations" }
+mongoDB = { group = "org.mongodb", name = "mongodb-driver-sync", version.ref = "mongoDB" }
+morphia = { group = "dev.morphia.morphia", name = "morphia-core", version.ref = "morphiaCore" }
+
+redis = { group = "org.redisson", name = "redisson", version.ref = "redisson" }
+ts3j = { group = "com.github.manevolent", name = "ts3j", version.ref = "ts3j" }
+
+
+# Testing
+junitApi = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
+junitEngine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
+mockitoCore = { group = "org.mockito", name = "mockito-core", version.ref = "mockito"}
+mockitoJunit = { group = "org.mockito", name = "mockito-junit-jupiter", version.ref = "mockito"}
+
+[plugins]
+
+shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
