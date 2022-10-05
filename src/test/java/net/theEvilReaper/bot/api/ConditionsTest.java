@@ -1,10 +1,8 @@
-package net.theEvilReaper.bot.api;
+package net.theevilreaper.bot.api;
 
-import net.theEvilReaper.bot.api.util.Conditions;
+import net.theevilreaper.bot.api.util.Conditions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author theEvilReaper

@@ -1,6 +1,6 @@
-package net.theEvilReaper.bot.api.user;
+package net.theevilreaper.bot.api.user;
 
-import net.theEvilReaper.bot.api.service.IService;
+import net.theevilreaper.bot.api.service.IService;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

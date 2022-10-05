@@ -1,7 +1,7 @@
-package net.theEvilReaper.bot.api.interaction;
+package net.theevilreaper.bot.api.interaction;
 
 import com.github.manevolent.ts3j.api.Client;
-import net.theEvilReaper.bot.api.user.User;
+import net.theevilreaper.bot.api.user.User;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -16,7 +16,7 @@ public interface GroupInteraction extends Interaction {
 
     void removeServerGroup(@NotNull Client client, int groupId);
 
-    @Deprecated
+    @Deprecated(forRemoval = true)
     default boolean hasGroup(@NotNull Client client, int groupId) {
         boolean isIn = false;
 
@@ -29,7 +29,7 @@ public interface GroupInteraction extends Interaction {
         return isIn;
     }
 
-    @Deprecated
+    @Deprecated(forRemoval = true)
     default boolean hasGroup(@NotNull User user, int groupID) {
         var groups = user.getGroups();
 

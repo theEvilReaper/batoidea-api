@@ -1,6 +1,6 @@
-package net.theEvilReaper.bot.api.database;
+package net.theevilreaper.bot.api.database;
 
-import net.theEvilReaper.bot.api.Connectable;
+import net.theevilreaper.bot.api.Connectable;
 import org.jetbrains.annotations.NotNull;
 import org.redisson.api.RedissonClient;
 

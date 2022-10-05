@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.provider;
+package net.theevilreaper.bot.api.provider;
 
 import com.github.manevolent.ts3j.api.Client;
 import org.jetbrains.annotations.NotNull;
@@ -24,7 +24,7 @@ public interface IClientProvider {
 
     int getSize();
 
-    @Deprecated
+    @Deprecated(forRemoval = true)
     Client recognizeClient(@NotNull Client client);
 
     Client getClientById(int clientId);

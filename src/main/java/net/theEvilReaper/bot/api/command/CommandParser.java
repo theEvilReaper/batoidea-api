@@ -1,8 +1,8 @@
-package net.theEvilReaper.bot.api.command;
+package net.theevilreaper.bot.api.command;
 
 import org.jetbrains.annotations.NotNull;
 
-import static net.theEvilReaper.bot.api.util.Strings.*;
+import static net.theevilreaper.bot.api.util.Strings.*;
 
 /**
  * The interface includes a method where a developer can implement a way,

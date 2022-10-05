@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.database;
+package net.theevilreaper.bot.api.database;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -1,8 +1,8 @@
-package net.theEvilReaper.bot.api.command.condition;
+package net.theevilreaper.bot.api.command.condition;
 
-import net.theEvilReaper.bot.api.command.CommandSender;
-import net.theEvilReaper.bot.api.command.ConsoleSender;
-import net.theEvilReaper.bot.api.user.User;
+import net.theevilreaper.bot.api.command.CommandSender;
+import net.theevilreaper.bot.api.command.ConsoleSender;
+import net.theevilreaper.bot.api.user.User;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -11,11 +11,12 @@ import org.jetbrains.annotations.Nullable;
  * @version 1.0.0
  * @since 1.0.0
  **/
-
-public class CommandConditions {
+public final class CommandConditions {
 
     private static final String ONLY_FOR_USER = "The command is only for users";
     private static final String ONLY_FOR_CONSOLE = "The command is only for the console";
+
+    private CommandConditions() {}
 
     /**
      * Checks if the {@link CommandSender} is a user.

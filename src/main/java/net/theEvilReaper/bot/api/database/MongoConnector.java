@@ -1,7 +1,7 @@
-package net.theEvilReaper.bot.api.database;
+package net.theevilreaper.bot.api.database;
 
 import com.mongodb.client.MongoClient;
-import net.theEvilReaper.bot.api.Connectable;
+import net.theevilreaper.bot.api.Connectable;
 import org.jetbrains.annotations.NotNull;
 
 /**

@@ -1,5 +1,6 @@
-package net.theEvilReaper.bot.api.config;
+package net.theevilreaper.bot.api.config;
 
+import net.theevilreaper.bot.api.util.Constants;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -183,7 +184,7 @@ public interface BotConfig extends IConfig {
         var groups = this.getArray("blockedGroups");
 
         if (groups.length == 0) {
-            return null;
+            return Constants.EMPTY_INT_ARRAY;
         }
 
         var mappedGroup = new int[groups.length];

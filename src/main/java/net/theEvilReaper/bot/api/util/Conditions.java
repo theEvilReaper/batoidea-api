@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api.util;
+package net.theevilreaper.bot.api.util;
 
 import com.github.manevolent.ts3j.api.TextMessageTargetMode;
 import org.jetbrains.annotations.NotNull;
@@ -12,7 +12,9 @@ import java.util.Properties;
  * @version 1.0.0
  * @since 1.0.0
  **/
-public class Conditions {
+public final class Conditions {
+
+    private Conditions() {}
 
     /**
      * Checks if a given string is empty.

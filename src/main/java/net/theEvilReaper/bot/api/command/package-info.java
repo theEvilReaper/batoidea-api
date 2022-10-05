@@ -6,4 +6,4 @@
  * @since 1.0.0
  **/
 
-package net.theEvilReaper.bot.api.command;
+package net.theevilreaper.bot.api.command;

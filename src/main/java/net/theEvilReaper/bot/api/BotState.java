@@ -1,4 +1,4 @@
-package net.theEvilReaper.bot.api;
+package net.theevilreaper.bot.api;
 
 /**
  * The enum contains all relevant states from the bot.

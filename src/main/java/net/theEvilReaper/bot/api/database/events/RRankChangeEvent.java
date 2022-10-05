@@ -1,6 +1,6 @@
-package net.theEvilReaper.bot.api.database.events;
+package net.theevilreaper.bot.api.database.events;
 
-import net.theEvilReaper.bot.api.database.REvent;
+import net.theevilreaper.bot.api.database.REvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;

@@ -1,11 +1,13 @@
-package net.theEvilReaper.bot.api.command.result;
+package net.theevilreaper.bot.api.command.result;
 
-import net.theEvilReaper.bot.api.command.Command;
-import net.theEvilReaper.bot.api.util.Conditions;
+import net.theevilreaper.bot.api.command.Command;
+import net.theevilreaper.bot.api.util.Conditions;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * The {@link CommandResult} represents the return value of each command that should be executed.
@@ -14,7 +16,6 @@ import java.util.Arrays;
  * @since 1.0.0
  * @version 1.0.0
  */
-
 public record CommandResult(@NotNull String input, @Nullable Command command, @NotNull CommandResult.ResultType type, @Nullable String... args) {
 
     /**
@@ -25,7 +26,8 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
      * @return the created {@link CommandResult}
      */
 
-    public static CommandResult of(@NotNull String input, @NotNull Command command, @NotNull CommandResult.ResultType type, @Nullable String... args) {
+    @Contract("_, _, _, _ -> new")
+    public static @NotNull CommandResult of(@NotNull String input, @NotNull Command command, @NotNull CommandResult.ResultType type, @Nullable String... args) {
         Conditions.checkForEmpty(input);
         return new CommandResult(input, command, type, args);
     }
@@ -36,7 +38,8 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
      * @return the created {@link CommandResult}
      */
 
-    public static CommandResult ofUnknown(@NotNull String input) {
+    @Contract("_ -> new")
+    public static @NotNull CommandResult ofUnknown(@NotNull String input) {
         Conditions.checkForEmpty(input);
         return new CommandResult(input, null, ResultType.UNKNOWN);
     }
@@ -56,10 +59,27 @@ public record CommandResult(@NotNull String input, @Nullable Command command, @N
                 '}';
     }
 
-    /**
-     * //TODO: DOC here
-     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CommandResult that = (CommandResult) o;
+        return input.equals(that.input) && Objects.equals(command, that.command) && type == that.type && Arrays.equals(args, that.args);
+    }
 
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(input, command, type);
+        result = 31 * result + Arrays.hashCode(args);
+        return result;
+    }
+
+    /**
+     * Defines which available ResultTypes which can be returned by a command.
+     * @author theEvilReaper
+     * @version 1.0.0
+     * @since  1.0.0
+     */
     public enum ResultType {
 
         /**
