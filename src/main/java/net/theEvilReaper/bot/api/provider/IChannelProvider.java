@@ -22,15 +22,6 @@ public interface IChannelProvider {
     }
 
     /**
-     * Recognize a channel. That means that the method looks if the channel is registered.
-     * When not the channel will be added to the underlying list
-     * @param channel The channel to check
-     * @return The given channel from the parameter list
-     */
-    @Deprecated(forRemoval = true)
-    Channel recognizeChannel(@NotNull Channel channel);
-
-    /**
      * Returns the channel based on the given id
      * @param channelId the id from the channel
      * @return The fetched channel. It can be null
