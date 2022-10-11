@@ -73,7 +73,7 @@ public interface IBot extends Connectable {
      * @return the underlying service
      */
     @NotNull
-    IUserService<User> getUserService();
+    <T extends User> IUserService<T> getUserService();
 
     /**
      * Returns the given instance from the {@link IClientProvider}.
