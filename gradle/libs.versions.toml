@@ -15,6 +15,8 @@ mongoDB = "4.7.1"
 redisson = "3.17.6"
 ts3j = "1.0.2"
 
+tinyLog = "2.5.0"
+
 
 [libraries]
 guava = { group = "com.google.guava", name = "guava", version.ref = "guava" }
@@ -25,6 +27,9 @@ morphia = { group = "dev.morphia.morphia", name = "morphia-core", version.ref = 
 redis = { group = "org.redisson", name = "redisson", version.ref = "redisson" }
 ts3j = { group = "com.github.manevolent", name = "ts3j", version.ref = "ts3j" }
 
+# Logging
+tinyLogApi = { group = "org.tinylog", name = "tinylog-api", version.ref = "tinyLog" }
+tinyLogImpl = { group = "org.tinylog", name = "tinylog-impl", version.ref = "tinyLog" }
 
 # Testing
 junitApi = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }

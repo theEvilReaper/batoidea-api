@@ -1,6 +1,8 @@
 plugins {
     java
     `maven-publish`
+    `java-library`
+    id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 repositories {
@@ -10,12 +12,14 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.ts3j)
-    implementation(libs.redis)
-    implementation(libs.mongoDB)
-    implementation(libs.morphia)
-    implementation(libs.annotations)
-    implementation(libs.guava)
+    api(libs.ts3j)
+    api(libs.redis)
+    api(libs.mongoDB)
+    api(libs.morphia)
+    api(libs.annotations)
+    api(libs.guava)
+    api(libs.tinyLogApi)
+    api(libs.tinyLogImpl)
     //Dependencies for testing
     testImplementation(libs.junitApi)
     testImplementation(libs.mockitoCore)
@@ -23,7 +27,7 @@ dependencies {
     testRuntimeOnly(libs.junitEngine)
 }
 
-group = "batoidea-api"
+group = "net.theEvilReaper.batoidea"
 version = "1.0.0-SNAPSHOT"
 description = "batoidea-api"
 
@@ -38,6 +42,11 @@ tasks {
         options.release.set(17)
     }
 
+    jar {
+        dependsOn("shadowJar")
+        archiveFileName.set("${rootProject.name}.${archiveExtension.getOrElse("jar")}")
+    }
+
     test {
         useJUnitPlatform()
         testLogging {
@@ -46,9 +55,13 @@ tasks {
     }
 }
 
-
 publishing {
-    publications.create<MavenPublication>("maven") {
-        from(components["java"])
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = project.properties["group"] as String?
+            artifactId = project.name
+            version = project.properties["version"] as String?
+            from(components["java"])
+        }
     }
 }
