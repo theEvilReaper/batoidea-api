@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
-import java.util.logging.Logger;
 
 /**
  *
@@ -46,13 +45,6 @@ public interface IBot extends Connectable {
      * @param botState The state to set
      */
     void setState(@NotNull BotState botState);
-
-    /**
-     * Returns the logger from the bot.
-     * @return the underlying instance from the logger
-     */
-    @NotNull
-    Logger getLogger();
 
     /**
      * Gets the state of the bot.
